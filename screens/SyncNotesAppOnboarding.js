@@ -14,7 +14,7 @@ const SyncNotesAppOnboarding = () => {
             <Image
               style={styles.frameChild}
               resizeMode="cover"
-              source={require("../assets/group-21.png")}
+              source={require("../assets/group-24.png")}
             />
             <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
           </View>
@@ -25,7 +25,7 @@ const SyncNotesAppOnboarding = () => {
             <Image
               style={[styles.icon, styles.iconLayout]}
               resizeMode="cover"
-              source={require("../assets/whmcs1.png")}
+              source={require("../assets/whmcs.png")}
             />
           </Pressable>
         </View>

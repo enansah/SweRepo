@@ -5,9 +5,9 @@ import SharePop from "../components/SharePop";
 import { Padding, Color, Border, FontFamily, FontSize } from "../GlobalStyles";
 
 const Container = () => {
-  const navigation = useNavigation();
   const [shareBtnContainerVisible, setShareBtnContainerVisible] =
     useState(false);
+  const navigation = useNavigation();
 
   const openShareBtnContainer = useCallback(() => {
     setShareBtnContainerVisible(true);
@@ -22,8 +22,8 @@ const Container = () => {
       <View style={[styles.container, styles.iconLayout]}>
         <View style={styles.frameParent}>
           <View style={styles.navParent}>
-            <View style={[styles.nav, styles.navFlexBox]}>
-              <View style={styles.navFlexBox}>
+            <View style={styles.nav}>
+              <View style={styles.groupParent}>
                 <Image
                   style={styles.frameChild}
                   resizeMode="cover"
@@ -43,7 +43,7 @@ const Container = () => {
               </Pressable>
             </View>
             <View style={styles.cardnameParent}>
-              <View style={styles.navFlexBox}>
+              <View style={styles.groupParent}>
                 <View style={[styles.termNameWrapper, styles.sharebtnBorder]}>
                   <Text style={[styles.termName, styles.shareFlexBox]}>
                     term name
@@ -61,23 +61,29 @@ const Container = () => {
               </View>
             </View>
           </View>
-          <View style={[styles.footerbar, styles.navFlexBox]}>
-            <View style={[styles.createcardbtn, styles.lashyFlexBox]}>
+          <View style={[styles.footerbar, styles.lashyFlexBox]}>
+            <Pressable
+              style={[styles.createcardbtn, styles.lashyFlexBox]}
+              onPress={() => navigation.navigate("Create")}
+            >
               <Image
                 style={styles.plusIcon}
                 resizeMode="cover"
-                source={require("../assets/plus4.png")}
+                source={require("../assets/plus.png")}
               />
               <Text style={[styles.create, styles.createTypo]}>Create</Text>
-            </View>
-            <View style={[styles.homebtn, styles.homebtnSpaceBlock]}>
+            </Pressable>
+            <Pressable
+              style={[styles.homebtn, styles.homebtnSpaceBlock]}
+              onPress={() => navigation.navigate("Homepage")}
+            >
               <Image
                 style={styles.plusIcon}
                 resizeMode="cover"
-                source={require("../assets/home21.png")}
+                source={require("../assets/home2.png")}
               />
               <Text style={[styles.create, styles.createTypo]}>Home</Text>
-            </View>
+            </Pressable>
             <View style={[styles.librarybtn, styles.homebtnSpaceBlock]}>
               <Image
                 style={styles.plusIcon}
@@ -111,10 +117,6 @@ const styles = StyleSheet.create({
   iconLayout: {
     width: "100%",
     overflow: "hidden",
-  },
-  navFlexBox: {
-    flexDirection: "row",
-    alignItems: "center",
   },
   lashyFlexBox: {
     justifyContent: "center",
@@ -168,13 +170,19 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.interLight,
     fontWeight: "300",
   },
+  groupParent: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   icon: {
     height: "100%",
     overflow: "hidden",
   },
   nav: {
     justifyContent: "space-between",
+    flexDirection: "row",
     alignSelf: "stretch",
+    alignItems: "center",
   },
   termName: {
     fontSize: FontSize.size_6xl,
@@ -260,6 +268,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_smi,
     paddingVertical: Padding.p_sm,
     marginTop: 28,
+    flexDirection: "row",
     alignSelf: "stretch",
   },
   frameParent: {

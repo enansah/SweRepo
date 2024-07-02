@@ -11,12 +11,12 @@ const Homepage = () => {
     <View style={[styles.homepage, styles.iconLayout]}>
       <View style={styles.frameParent}>
         <View style={styles.navParent}>
-          <View style={[styles.nav, styles.navFlexBox]}>
-            <View style={styles.navFlexBox}>
+          <View style={styles.nav}>
+            <View style={styles.groupParent}>
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-2.png")}
+                source={require("../assets/group-24.png")}
               />
               <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
             </View>
@@ -27,21 +27,24 @@ const Homepage = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/settingsbtn.png")}
+                source={require("../assets/whmcs.png")}
               />
             </Pressable>
           </View>
           <SearchArea />
         </View>
-        <View style={[styles.footerbar, styles.navFlexBox]}>
-          <View style={[styles.createcardbtn, styles.lashyFlexBox]}>
+        <View style={[styles.footerbar, styles.lashyFlexBox]}>
+          <Pressable
+            style={[styles.createcardbtn, styles.lashyFlexBox]}
+            onPress={() => navigation.navigate("Create")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
               source={require("../assets/plus.png")}
             />
             <Text style={styles.createTypo}>Create</Text>
-          </View>
+          </Pressable>
           <View style={[styles.homebtn, styles.homebtnSpaceBlock]}>
             <Image
               style={styles.plusIcon}
@@ -50,14 +53,17 @@ const Homepage = () => {
             />
             <Text style={styles.home}>Home</Text>
           </View>
-          <View style={[styles.librarybtn, styles.homebtnSpaceBlock]}>
+          <Pressable
+            style={[styles.librarybtn, styles.homebtnSpaceBlock]}
+            onPress={() => navigation.navigate("Library")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
               source={require("../assets/bookreader.png")}
             />
             <Text style={[styles.library, styles.createTypo]}>Library</Text>
-          </View>
+          </Pressable>
         </View>
       </View>
     </View>
@@ -68,10 +74,6 @@ const styles = StyleSheet.create({
   iconLayout: {
     width: "100%",
     overflow: "hidden",
-  },
-  navFlexBox: {
-    flexDirection: "row",
-    alignItems: "center",
   },
   lashyFlexBox: {
     justifyContent: "center",
@@ -105,13 +107,19 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
   },
+  groupParent: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   icon: {
     height: "100%",
     overflow: "hidden",
   },
   nav: {
     justifyContent: "space-between",
+    flexDirection: "row",
     alignSelf: "stretch",
+    alignItems: "center",
   },
   navParent: {
     alignItems: "flex-end",
@@ -150,6 +158,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_smi,
     paddingVertical: Padding.p_sm,
     marginTop: 227,
+    flexDirection: "row",
     alignSelf: "stretch",
   },
   frameParent: {

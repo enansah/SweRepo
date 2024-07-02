@@ -9,9 +9,9 @@ const Library = () => {
   return (
     <View style={[styles.library, styles.iconLayout]}>
       <View style={styles.frameParent}>
-        <View style={styles.frameGroup}>
-          <View style={styles.navParent}>
-            <View style={styles.nav}>
+        <View style={styles.navFlexBox}>
+          <View style={styles.navFlexBox}>
+            <View style={[styles.nav, styles.navFlexBox]}>
               <View style={styles.groupParent}>
                 <Image
                   style={styles.frameChild}
@@ -31,28 +31,37 @@ const Library = () => {
                 />
               </Pressable>
             </View>
-            <View style={styles.courseHeaderParent}>
+            <View style={[styles.courseHeaderParent, styles.navFlexBox]}>
               <View style={[styles.courseHeader, styles.courseFlexBox1]}>
                 <Text style={[styles.yourCourses, styles.courseFlexBox1]}>
                   Your courses
                 </Text>
               </View>
-              <View style={[styles.courses, styles.coursesBg]}>
-                <View style={styles.course1}>
+              <View style={[styles.courses, styles.coursesFlexBox]}>
+                <Pressable
+                  style={styles.course1}
+                  onPress={() => navigation.navigate("NewCard3")}
+                >
                   <Text style={[styles.physiology, styles.physiologyClr]}>
                     Physiology
                   </Text>
-                </View>
-                <View style={[styles.course2, styles.courseFlexBox]}>
+                </Pressable>
+                <Pressable
+                  style={[styles.course2, styles.courseFlexBox]}
+                  onPress={() => navigation.navigate("NewCard3")}
+                >
                   <Text style={[styles.physiology, styles.physiologyClr]}>
                     Anatomy
                   </Text>
-                </View>
-                <View style={[styles.course3, styles.courseFlexBox]}>
+                </Pressable>
+                <Pressable
+                  style={[styles.course3, styles.courseFlexBox]}
+                  onPress={() => navigation.navigate("NewCard3")}
+                >
                   <Text style={[styles.physiology, styles.physiologyClr]}>
                     Ethics
                   </Text>
-                </View>
+                </Pressable>
               </View>
             </View>
           </View>
@@ -65,28 +74,34 @@ const Library = () => {
             </Text>
           </Pressable>
         </View>
-        <View style={[styles.footerbar, styles.coursesBg]}>
-          <View style={[styles.createcardbtn, styles.courseFlexBox1]}>
+        <View style={[styles.footerbar, styles.coursesFlexBox]}>
+          <Pressable
+            style={[styles.createcardbtn, styles.courseFlexBox1]}
+            onPress={() => navigation.navigate("Create")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
               source={require("../assets/plus.png")}
             />
             <Text style={[styles.create, styles.createTypo]}>Create</Text>
-          </View>
-          <View style={[styles.homebtn, styles.homebtnSpaceBlock]}>
+          </Pressable>
+          <Pressable
+            style={[styles.homebtn, styles.homebtnSpaceBlock]}
+            onPress={() => navigation.navigate("Homepage")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home4.png")}
+              source={require("../assets/home2.png")}
             />
             <Text style={[styles.create, styles.createTypo]}>Home</Text>
-          </View>
+          </Pressable>
           <View style={[styles.librarybtn, styles.homebtnSpaceBlock]}>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader6.png")}
+              source={require("../assets/bookreader5.png")}
             />
             <Text style={[styles.library1, styles.createTypo]}>Library</Text>
           </View>
@@ -101,13 +116,19 @@ const styles = StyleSheet.create({
     width: "100%",
     overflow: "hidden",
   },
+  navFlexBox: {
+    alignSelf: "stretch",
+    alignItems: "center",
+  },
   courseFlexBox1: {
     justifyContent: "center",
     alignItems: "center",
   },
-  coursesBg: {
+  coursesFlexBox: {
     backgroundColor: Color.colorBlack,
+    justifyContent: "center",
     alignSelf: "stretch",
+    alignItems: "center",
   },
   physiologyClr: {
     color: Color.bLACK,
@@ -160,8 +181,6 @@ const styles = StyleSheet.create({
   nav: {
     justifyContent: "space-between",
     flexDirection: "row",
-    alignSelf: "stretch",
-    alignItems: "center",
   },
   yourCourses: {
     fontSize: FontSize.size_16xl,
@@ -208,18 +227,11 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_xl,
     height: 201,
     paddingHorizontal: Padding.p_2xl,
-    paddingTop: Padding.p_xl,
-    paddingBottom: Padding.p_2xs,
+    paddingVertical: Padding.p_2xs,
     marginTop: 5,
   },
   courseHeaderParent: {
     marginTop: 20,
-    alignSelf: "stretch",
-    alignItems: "center",
-  },
-  navParent: {
-    alignItems: "flex-end",
-    alignSelf: "stretch",
   },
   createACourse: {
     fontSize: FontSize.size_base,
@@ -237,10 +249,6 @@ const styles = StyleSheet.create({
     padding: Padding.p_2xs,
     marginTop: 251,
     flexDirection: "row",
-  },
-  frameGroup: {
-    alignSelf: "stretch",
-    alignItems: "center",
   },
   plusIcon: {
     width: 50,
@@ -271,7 +279,6 @@ const styles = StyleSheet.create({
     paddingVertical: Padding.p_sm,
     marginTop: 36,
     flexDirection: "row",
-    alignItems: "center",
   },
   frameParent: {
     position: "absolute",

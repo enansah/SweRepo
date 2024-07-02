@@ -14,18 +14,16 @@ const Notification1 = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.notification}>
-      <ImageBackground
-        style={[styles.frameParent, styles.frameParentPosition]}
-        resizeMode="cover"
-        source={require("../assets/frame122.png")}
-      >
+    <ImageBackground
+      style={styles.notificationIcon}
+      resizeMode="cover"
+      source={require("../assets/notification.png")}
+    >
+      <View style={[styles.frameParent, styles.frameParentPosition]}>
         <View style={styles.navParent}>
           <View style={styles.nav}>
-            <View
-              style={[styles.notificationWrapper, styles.createcardbtnFlexBox]}
-            >
-              <Text style={[styles.notification1, styles.notification1Typo]}>
+            <View style={[styles.notificationWrapper, styles.footerbarFlexBox]}>
+              <Text style={[styles.notification, styles.notificationTypo]}>
                 notification
               </Text>
             </View>
@@ -51,7 +49,7 @@ const Notification1 = () => {
                 ]}
               >
                 <Text
-                  style={[styles.notificationsHere, styles.notification1Typo]}
+                  style={[styles.notificationsHere, styles.notificationTypo]}
                 >
                   notifications here
                 </Text>
@@ -59,34 +57,43 @@ const Notification1 = () => {
             </View>
           </View>
         </View>
-        <View style={styles.footerbar}>
-          <View style={[styles.createcardbtn, styles.createcardbtnFlexBox]}>
+        <View style={[styles.footerbar, styles.footerbarFlexBox]}>
+          <Pressable
+            style={[styles.createcardbtn, styles.footerbarFlexBox]}
+            onPress={() => navigation.navigate("Create")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus6.png")}
+              source={require("../assets/plus5.png")}
             />
             <Text style={styles.createTypo}>Create</Text>
-          </View>
-          <View style={[styles.homebtn, styles.homebtnSpaceBlock]}>
+          </Pressable>
+          <Pressable
+            style={[styles.homebtn, styles.homebtnSpaceBlock]}
+            onPress={() => navigation.navigate("Homepage")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home6.png")}
+              source={require("../assets/home5.png")}
             />
             <Text style={styles.createTypo}>Home</Text>
-          </View>
-          <View style={[styles.librarybtn, styles.homebtnSpaceBlock]}>
+          </Pressable>
+          <Pressable
+            style={[styles.librarybtn, styles.homebtnSpaceBlock]}
+            onPress={() => navigation.navigate("Library")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader7.png")}
+              source={require("../assets/bookreader4.png")}
             />
             <Text style={[styles.library, styles.createTypo]}>Library</Text>
-          </View>
+          </Pressable>
         </View>
-      </ImageBackground>
-    </View>
+      </View>
+    </ImageBackground>
   );
 };
 
@@ -95,11 +102,11 @@ const styles = StyleSheet.create({
     position: "absolute",
     alignItems: "center",
   },
-  createcardbtnFlexBox: {
+  footerbarFlexBox: {
     justifyContent: "center",
     alignItems: "center",
   },
-  notification1Typo: {
+  notificationTypo: {
     textAlign: "center",
     color: Color.colorBlack,
     fontFamily: FontFamily.interLight,
@@ -117,7 +124,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_5xl,
     alignSelf: "stretch",
   },
-  notification1: {
+  notification: {
     display: "flex",
     width: 148,
     fontSize: FontSize.size_5xl,
@@ -180,12 +187,12 @@ const styles = StyleSheet.create({
   noticecontainerWrapper: {
     marginTop: 11,
     padding: Padding.p_3xs,
-    flexDirection: "row",
     alignSelf: "stretch",
     alignItems: "center",
   },
   navParent: {
     alignSelf: "stretch",
+    alignItems: "center",
   },
   plusIcon: {
     width: 50,
@@ -214,16 +221,15 @@ const styles = StyleSheet.create({
     marginTop: 8,
     flexDirection: "row",
     alignSelf: "stretch",
-    alignItems: "center",
   },
   frameParent: {
+    marginTop: -400,
     marginLeft: -175,
-    top: 18,
+    top: "50%",
     left: "50%",
     alignItems: "center",
   },
-  notification: {
-    backgroundColor: Color.white,
+  notificationIcon: {
     flex: 1,
     width: "100%",
     height: 844,

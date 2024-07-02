@@ -1,13 +1,16 @@
 import * as React from "react";
-import { Text, StyleSheet, Image, View } from "react-native";
-import { Border, Color, FontSize, FontFamily, Padding } from "../GlobalStyles";
+import { Text, StyleSheet, Image, View, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { FontFamily, Border, Color, FontSize, Padding } from "../GlobalStyles";
 
 const SearchArea = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.searchcoursesParent}>
       <View style={styles.searchcourses}>
         <View style={styles.searchParent}>
-          <Text style={styles.search}>search</Text>
+          <Text style={[styles.search, styles.searchTypo]}>search</Text>
           <Image
             style={styles.searchIcon}
             resizeMode="cover"
@@ -16,17 +19,28 @@ const SearchArea = () => {
         </View>
       </View>
       <View style={styles.recentlyViewedParent}>
-        <Text style={styles.recentlyViewed}>recently viewed</Text>
-        <View style={styles.courses}>
-          <View style={styles.course1}>
+        <Text style={[styles.recentlyViewed, styles.coursesFlexBox]}>
+          recently viewed
+        </Text>
+        <View style={[styles.courses, styles.coursesFlexBox]}>
+          <Pressable
+            style={styles.course1}
+            onPress={() => navigation.navigate("NewCard3")}
+          >
             <Text style={styles.physiology}>Physiology</Text>
-          </View>
-          <View style={[styles.course2, styles.courseFlexBox]}>
+          </Pressable>
+          <Pressable
+            style={[styles.course2, styles.courseFlexBox]}
+            onPress={() => navigation.navigate("NewCard3")}
+          >
             <Text style={styles.physiology}>Anatomy</Text>
-          </View>
-          <View style={[styles.course3, styles.courseFlexBox]}>
+          </Pressable>
+          <Pressable
+            style={[styles.course3, styles.courseFlexBox]}
+            onPress={() => navigation.navigate("NewCard3")}
+          >
             <Text style={styles.physiology}>Ethics</Text>
-          </View>
+          </Pressable>
         </View>
       </View>
     </View>
@@ -34,6 +48,15 @@ const SearchArea = () => {
 };
 
 const styles = StyleSheet.create({
+  searchTypo: {
+    display: "flex",
+    fontFamily: FontFamily.interLight,
+    fontWeight: "300",
+  },
+  coursesFlexBox: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
   courseFlexBox: {
     marginTop: 15,
     borderRadius: Border.br_mini,
@@ -48,10 +71,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     width: 260,
     height: 25,
-    display: "flex",
     color: Color.bLACK,
-    fontFamily: FontFamily.interLight,
-    fontWeight: "300",
     alignItems: "center",
   },
   searchIcon: {
@@ -80,12 +100,10 @@ const styles = StyleSheet.create({
     color: Color.gREEN,
     width: 319,
     height: 32,
-    justifyContent: "center",
     textAlign: "center",
     display: "flex",
     fontFamily: FontFamily.interLight,
     fontWeight: "300",
-    alignItems: "center",
   },
   physiology: {
     fontSize: FontSize.size_5xl,
@@ -116,8 +134,9 @@ const styles = StyleSheet.create({
     height: 43,
   },
   courses: {
-    width: 318,
+    height: 158,
     marginTop: 50,
+    alignSelf: "stretch",
   },
   recentlyViewedParent: {
     borderRadius: Border.br_xl,

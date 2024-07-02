@@ -82,30 +82,39 @@ const Upload = () => {
           </View>
         </View>
         <View style={[styles.footerbar, styles.navFlexBox]}>
-          <View style={styles.createcardbtn}>
+          <Pressable
+            style={styles.createcardbtn}
+            onPress={() => navigation.navigate("Create")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus5.png")}
+              source={require("../assets/plus4.png")}
             />
             <Text style={styles.create1Typo}>Create</Text>
-          </View>
-          <View style={[styles.homebtn, styles.homebtnSpaceBlock]}>
+          </Pressable>
+          <Pressable
+            style={[styles.homebtn, styles.homebtnSpaceBlock]}
+            onPress={() => navigation.navigate("Homepage")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home5.png")}
+              source={require("../assets/home4.png")}
             />
             <Text style={styles.create1Typo}>Home</Text>
-          </View>
-          <View style={[styles.librarybtn, styles.homebtnSpaceBlock]}>
+          </Pressable>
+          <Pressable
+            style={[styles.librarybtn, styles.homebtnSpaceBlock]}
+            onPress={() => navigation.navigate("Library")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader4.png")}
+              source={require("../assets/bookreader3.png")}
             />
             <Text style={[styles.library, styles.create1Typo]}>Library</Text>
-          </View>
+          </Pressable>
         </View>
       </View>
     </View>
@@ -329,6 +338,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_smi,
     paddingVertical: Padding.p_sm,
     marginTop: 36,
+    justifyContent: "center",
     alignSelf: "stretch",
   },
   frameParent: {

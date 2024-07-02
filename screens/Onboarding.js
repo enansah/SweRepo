@@ -23,12 +23,12 @@ on Flashy`}</Text>
             <Image
               style={styles.frameLayout}
               resizeMode="cover"
-              source={require("../assets/ellipse-1.png")}
+              source={require("../assets/ellipse-3.png")}
             />
             <Image
               style={[styles.frameItem, styles.frameLayout]}
               resizeMode="cover"
-              source={require("../assets/ellipse-3.png")}
+              source={require("../assets/ellipse-1.png")}
             />
             <Image
               style={[styles.frameItem, styles.frameLayout]}
@@ -37,7 +37,7 @@ on Flashy`}</Text>
             />
           </View>
           <View style={[styles.nextbtn, styles.parentFlexBox]}>
-            <Pressable onPress={() => navigation.navigate("Onboarding")}>
+            <Pressable onPress={() => navigation.navigate("Onboarding1")}>
               <Text style={styles.next1}>Next</Text>
             </Pressable>
           </View>

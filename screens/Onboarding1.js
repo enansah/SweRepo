@@ -27,21 +27,23 @@ on Flashy`}</Text>
             <Image
               style={styles.frameLayout}
               resizeMode="cover"
+              source={require("../assets/ellipse-11.png")}
+            />
+            <Image
+              style={[styles.frameItem, styles.frameLayout]}
+              resizeMode="cover"
+              source={require("../assets/ellipse-11.png")}
+            />
+            <Image
+              style={[styles.frameItem, styles.frameLayout]}
+              resizeMode="cover"
               source={require("../assets/ellipse-12.png")}
-            />
-            <Image
-              style={[styles.frameItem, styles.frameLayout]}
-              resizeMode="cover"
-              source={require("../assets/ellipse-11.png")}
-            />
-            <Image
-              style={[styles.frameItem, styles.frameLayout]}
-              resizeMode="cover"
-              source={require("../assets/ellipse-11.png")}
             />
           </View>
           <View style={[styles.nextbtn, styles.parentFlexBox]}>
-            <Pressable onPress={() => navigation.navigate("Onboarding")}>
+            <Pressable
+              onPress={() => navigation.navigate("SyncNotesAppOnboarding")}
+            >
               <Text style={styles.next1}>Next</Text>
             </Pressable>
           </View>

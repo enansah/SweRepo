@@ -119,30 +119,39 @@ Happy studying!`}</Text>
         </View>
       </View>
       <View style={[styles.footerbar, styles.footerbarFlexBox]}>
-        <View style={[styles.createcardbtn, styles.footerbarFlexBox]}>
+        <Pressable
+          style={[styles.createcardbtn, styles.footerbarFlexBox]}
+          onPress={() => navigation.navigate("Create")}
+        >
           <Image
             style={styles.plusIcon}
             resizeMode="cover"
             source={require("../assets/plus.png")}
           />
           <Text style={styles.createTypo}>Create</Text>
-        </View>
-        <View style={[styles.homebtn, styles.homebtnSpaceBlock]}>
+        </Pressable>
+        <Pressable
+          style={[styles.homebtn, styles.homebtnSpaceBlock]}
+          onPress={() => navigation.navigate("Homepage")}
+        >
           <Image
             style={styles.plusIcon}
             resizeMode="cover"
-            source={require("../assets/home1.png")}
+            source={require("../assets/home2.png")}
           />
           <Text style={styles.createTypo}>Home</Text>
-        </View>
-        <View style={[styles.librarybtn, styles.homebtnSpaceBlock]}>
+        </Pressable>
+        <Pressable
+          style={[styles.librarybtn, styles.homebtnSpaceBlock]}
+          onPress={() => navigation.navigate("Library")}
+        >
           <Image
             style={styles.plusIcon}
             resizeMode="cover"
             source={require("../assets/bookreader.png")}
           />
           <Text style={[styles.library, styles.createTypo]}>Library</Text>
-        </View>
+        </Pressable>
       </View>
     </View>
   );

@@ -10,12 +10,12 @@ const NewCourse = () => {
     <View style={[styles.newCourse, styles.iconLayout]}>
       <View style={styles.frameParent}>
         <View style={styles.navParent}>
-          <View style={[styles.nav, styles.navFlexBox]}>
-            <View style={styles.navFlexBox}>
+          <View style={styles.nav}>
+            <View style={styles.groupParent}>
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-22.png")}
+                source={require("../assets/group-2.png")}
               />
               <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
             </View>
@@ -57,31 +57,37 @@ COURSE`}</Text>
             </Pressable>
           </View>
         </View>
-        <View style={[styles.footerbar, styles.navFlexBox]}>
+        <View style={[styles.footerbar, styles.lashyFlexBox]}>
           <View style={[styles.createcardbtn, styles.lashyFlexBox]}>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus2.png")}
+              source={require("../assets/plus7.png")}
             />
             <Text style={styles.create1}>Create</Text>
           </View>
-          <View style={[styles.homebtn, styles.homebtnSpaceBlock]}>
+          <Pressable
+            style={[styles.homebtn, styles.homebtnSpaceBlock]}
+            onPress={() => navigation.navigate("Homepage")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home2.png")}
+              source={require("../assets/home7.png")}
             />
             <Text style={styles.homeTypo}>Home</Text>
-          </View>
-          <View style={[styles.librarybtn, styles.homebtnSpaceBlock]}>
+          </Pressable>
+          <Pressable
+            style={[styles.librarybtn, styles.homebtnSpaceBlock]}
+            onPress={() => navigation.navigate("Library")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader2.png")}
+              source={require("../assets/bookreader8.png")}
             />
             <Text style={[styles.library, styles.homeTypo]}>Library</Text>
-          </View>
+          </Pressable>
         </View>
       </View>
     </View>
@@ -92,10 +98,6 @@ const styles = StyleSheet.create({
   iconLayout: {
     width: "100%",
     overflow: "hidden",
-  },
-  navFlexBox: {
-    flexDirection: "row",
-    alignItems: "center",
   },
   lashyFlexBox: {
     justifyContent: "center",
@@ -145,13 +147,19 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.interLight,
     fontWeight: "300",
   },
+  groupParent: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   icon: {
     height: "100%",
     overflow: "hidden",
   },
   nav: {
     justifyContent: "space-between",
+    flexDirection: "row",
     alignSelf: "stretch",
+    alignItems: "center",
   },
   newCourse1: {
     fontSize: FontSize.size_45xl,
@@ -255,6 +263,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_smi,
     paddingVertical: Padding.p_sm,
     marginTop: 35,
+    flexDirection: "row",
     alignSelf: "stretch",
   },
   frameParent: {

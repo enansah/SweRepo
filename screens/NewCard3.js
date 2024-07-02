@@ -15,7 +15,7 @@ const NewCard3 = () => {
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-22.png")}
+                source={require("../assets/group-2.png")}
               />
               <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
             </View>
@@ -65,7 +65,7 @@ const NewCard3 = () => {
             </Pressable>
           </View>
         </View>
-        <View style={styles.footerbar}>
+        <View style={[styles.footerbar, styles.lashyFlexBox]}>
           <View style={[styles.createcardbtn, styles.lashyFlexBox]}>
             <Image
               style={styles.plusIcon}
@@ -74,22 +74,28 @@ const NewCard3 = () => {
             />
             <Text style={styles.create}>Create</Text>
           </View>
-          <View style={[styles.homebtn, styles.homebtnSpaceBlock]}>
+          <Pressable
+            style={[styles.homebtn, styles.homebtnSpaceBlock]}
+            onPress={() => navigation.navigate("Homepage")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
               source={require("../assets/home7.png")}
             />
             <Text style={styles.homeTypo}>Home</Text>
-          </View>
-          <View style={[styles.librarybtn, styles.homebtnSpaceBlock]}>
+          </Pressable>
+          <Pressable
+            style={[styles.librarybtn, styles.homebtnSpaceBlock]}
+            onPress={() => navigation.navigate("Library")}
+          >
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
               source={require("../assets/bookreader8.png")}
             />
             <Text style={[styles.library, styles.homeTypo]}>Library</Text>
-          </View>
+          </Pressable>
         </View>
       </View>
     </View>
@@ -279,7 +285,6 @@ const styles = StyleSheet.create({
     marginTop: 35,
     flexDirection: "row",
     alignSelf: "stretch",
-    alignItems: "center",
   },
   frameParent: {
     position: "absolute",
