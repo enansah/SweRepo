@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Image, StyleSheet, Text, View, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Color, FontFamily, FontSize, Border, Padding } from "../GlobalStyles";
+import { FontFamily, Color, Padding, Border, FontSize } from "../GlobalStyles";
 
 const NewCard3 = () => {
   const navigation = useNavigation();
@@ -10,14 +10,14 @@ const NewCard3 = () => {
     <View style={[styles.newCard3, styles.iconLayout]}>
       <View style={styles.frameParent}>
         <View style={styles.navParent}>
-          <View style={styles.nav}>
-            <View style={styles.groupParent}>
+          <View style={[styles.nav, styles.navFlexBox]}>
+            <View style={styles.navFlexBox}>
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-2.png")}
+                source={require("../assets/group-23.png")}
               />
-              <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
+              <Text style={[styles.lashy, styles.lashyTypo]}>LASHY</Text>
             </View>
             <Pressable
               style={styles.frameChild}
@@ -31,46 +31,39 @@ const NewCard3 = () => {
             </Pressable>
           </View>
           <View style={styles.frameGroup}>
-            <View style={styles.createnewcourseParent}>
-              <View style={[styles.createnewcourse, styles.card1FlexBox]}>
-                <Text style={styles.newCardClr}>
-                  <Text
-                    style={[styles.courseName, styles.cardsTypo]}
-                  >{`course name
-`}</Text>
-                  <Text
-                    style={[styles.descriptionOptional, styles.termNameTypo]}
-                  >
-                    description (optional)
+            <View style={styles.courseNameParent}>
+              <Text style={[styles.courseName, styles.newCardFlexBox]}>
+                course name
+              </Text>
+              <View style={styles.card1Parent}>
+                <View style={styles.cardBorder}>
+                  <Text style={[styles.cardContent, styles.lashyTypo]}>
+                    Card content
                   </Text>
-                </Text>
-              </View>
-              <View style={styles.cardsParent}>
-                <Text style={[styles.cards, styles.cardsFlexBox]}>CARDS</Text>
-                <Pressable
-                  style={[styles.card1, styles.card1FlexBox]}
-                  onPress={() => navigation.navigate("Container")}
-                >
-                  <Text style={[styles.termName, styles.cardsFlexBox]}>
-                    term name
+                </View>
+                <View style={[styles.card11, styles.cardBorder]}>
+                  <Text style={[styles.cardContent, styles.lashyTypo]}>
+                    Card content
                   </Text>
-                </Pressable>
+                </View>
               </View>
             </View>
             <Pressable
-              style={[styles.createbtn, styles.lashyFlexBox]}
-              onPress={() => navigation.navigate("NewCard")}
+              style={[styles.createbtn, styles.navFlexBox]}
+              onPress={() => navigation.navigate("NewCard1")}
             >
-              <Text style={[styles.newCard, styles.newCardClr]}>New Card</Text>
+              <Text style={[styles.newCard, styles.newCardFlexBox]}>
+                New Card
+              </Text>
             </Pressable>
           </View>
         </View>
-        <View style={[styles.footerbar, styles.lashyFlexBox]}>
-          <View style={[styles.createcardbtn, styles.lashyFlexBox]}>
+        <View style={[styles.footerbar, styles.navFlexBox]}>
+          <View style={styles.createcardbtn}>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus7.png")}
+              source={require("../assets/plus3.png")}
             />
             <Text style={styles.create}>Create</Text>
           </View>
@@ -81,7 +74,7 @@ const NewCard3 = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home7.png")}
+              source={require("../assets/home3.png")}
             />
             <Text style={styles.homeTypo}>Home</Text>
           </Pressable>
@@ -92,7 +85,7 @@ const NewCard3 = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader8.png")}
+              source={require("../assets/bookreader2.png")}
             />
             <Text style={[styles.library, styles.homeTypo]}>Library</Text>
           </Pressable>
@@ -107,37 +100,32 @@ const styles = StyleSheet.create({
     width: "100%",
     overflow: "hidden",
   },
-  lashyFlexBox: {
+  navFlexBox: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  lashyTypo: {
+    display: "flex",
+    fontFamily: FontFamily.interLight,
+    fontWeight: "300",
+    alignItems: "center",
+  },
+  newCardFlexBox: {
+    color: Color.bLACK,
+    display: "flex",
+    textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
-  card1FlexBox: {
+  cardBorder: {
+    padding: Padding.p_8xs,
+    height: 187,
     borderWidth: 1,
     borderColor: Color.colorBlack,
     borderStyle: "solid",
-    justifyContent: "center",
-    flexDirection: "row",
+    backgroundColor: Color.colorWhitesmoke,
+    borderRadius: Border.br_3xs,
     alignSelf: "stretch",
-    alignItems: "center",
-  },
-  cardsTypo: {
-    fontFamily: FontFamily.sourceSansPro,
-    fontSize: FontSize.size_21xl,
-  },
-  termNameTypo: {
-    fontFamily: FontFamily.interLight,
-    fontWeight: "300",
-  },
-  cardsFlexBox: {
-    color: Color.colorDarkslategray,
-    justifyContent: "center",
-    display: "flex",
-    textAlign: "center",
-    alignItems: "center",
-  },
-  newCardClr: {
-    color: Color.bLACK,
-    textAlign: "center",
   },
   homebtnSpaceBlock: {
     marginLeft: 22,
@@ -161,15 +149,11 @@ const styles = StyleSheet.create({
     width: 70,
     height: 23,
     marginLeft: -15,
-    display: "flex",
-    justifyContent: "center",
     textAlign: "center",
+    display: "flex",
     fontFamily: FontFamily.interLight,
     fontWeight: "300",
-  },
-  groupParent: {
-    flexDirection: "row",
-    alignItems: "center",
+    justifyContent: "center",
   },
   icon: {
     height: "100%",
@@ -177,49 +161,34 @@ const styles = StyleSheet.create({
   },
   nav: {
     justifyContent: "space-between",
-    flexDirection: "row",
     alignSelf: "stretch",
-    alignItems: "center",
   },
   courseName: {
-    fontWeight: "600",
-  },
-  descriptionOptional: {
-    fontSize: FontSize.size_6xl,
-  },
-  createnewcourse: {
-    borderRadius: Border.br_xl,
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    height: 229,
-    paddingHorizontal: Padding.p_4xl,
-    paddingVertical: Padding.p_68xl,
-  },
-  cards: {
-    height: 39,
-    fontFamily: FontFamily.sourceSansPro,
     fontSize: FontSize.size_21xl,
-    alignSelf: "stretch",
+    fontWeight: "600",
+    fontFamily: FontFamily.sourceSansPro,
+    width: 248,
+    height: 41,
   },
-  termName: {
+  cardContent: {
     fontSize: FontSize.size_xl,
-    width: 295,
+    color: Color.colorDarkslategray,
+    textAlign: "left",
+    height: 20,
+    display: "flex",
     fontFamily: FontFamily.interLight,
     fontWeight: "300",
+    alignSelf: "stretch",
   },
-  card1: {
-    borderRadius: Border.br_3xs,
-    backgroundColor: Color.colorWhitesmoke,
-    paddingHorizontal: Padding.p_23xl,
-    paddingVertical: Padding.p_mini,
+  card11: {
     marginTop: 10,
-    height: 40,
   },
-  cardsParent: {
-    width: 350,
+  card1Parent: {
     marginTop: 45,
-    alignItems: "center",
+    alignSelf: "stretch",
   },
-  createnewcourseParent: {
+  courseNameParent: {
+    height: 501,
     alignSelf: "stretch",
     alignItems: "center",
   },
@@ -228,9 +197,6 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.interRegular,
     width: 99,
     height: 27,
-    justifyContent: "center",
-    alignItems: "center",
-    display: "flex",
   },
   createbtn: {
     borderRadius: Border.br_31xl,
@@ -238,8 +204,8 @@ const styles = StyleSheet.create({
     width: 122,
     height: 49,
     padding: Padding.p_2xs,
-    marginTop: 138,
-    flexDirection: "row",
+    marginTop: 15,
+    justifyContent: "center",
   },
   frameGroup: {
     marginTop: 40,
@@ -265,6 +231,8 @@ const styles = StyleSheet.create({
   },
   createcardbtn: {
     width: 89,
+    justifyContent: "center",
+    alignItems: "center",
   },
   homebtn: {
     width: 97,
@@ -282,15 +250,15 @@ const styles = StyleSheet.create({
     height: 123,
     paddingHorizontal: Padding.p_smi,
     paddingVertical: Padding.p_sm,
-    marginTop: 35,
-    flexDirection: "row",
+    marginTop: 20,
     alignSelf: "stretch",
+    justifyContent: "center",
   },
   frameParent: {
     position: "absolute",
-    marginLeft: -175.5,
     top: 28,
-    left: "50%",
+    left: 20,
+    justifyContent: "center",
     alignItems: "center",
   },
   newCard3: {

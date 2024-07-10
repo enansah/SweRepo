@@ -15,7 +15,7 @@ const NewCourse = () => {
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-2.png")}
+                source={require("../assets/group-22.png")}
               />
               <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
             </View>
@@ -62,7 +62,7 @@ COURSE`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus7.png")}
+              source={require("../assets/plus3.png")}
             />
             <Text style={styles.create1}>Create</Text>
           </View>
@@ -73,7 +73,7 @@ COURSE`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home7.png")}
+              source={require("../assets/home3.png")}
             />
             <Text style={styles.homeTypo}>Home</Text>
           </Pressable>
@@ -84,7 +84,7 @@ COURSE`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader8.png")}
+              source={require("../assets/bookreader2.png")}
             />
             <Text style={[styles.library, styles.homeTypo]}>Library</Text>
           </Pressable>

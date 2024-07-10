@@ -16,7 +16,7 @@ const Library = () => {
                 <Image
                   style={styles.frameChild}
                   resizeMode="cover"
-                  source={require("../assets/group-24.png")}
+                  source={require("../assets/group-2.png")}
                 />
                 <Text style={[styles.lashy, styles.courseFlexBox1]}>LASHY</Text>
               </View>
@@ -27,7 +27,7 @@ const Library = () => {
                 <Image
                   style={[styles.icon, styles.iconLayout]}
                   resizeMode="cover"
-                  source={require("../assets/whmcs.png")}
+                  source={require("../assets/settingsbtn.png")}
                 />
               </Pressable>
             </View>
@@ -101,7 +101,7 @@ const Library = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader5.png")}
+              source={require("../assets/bookreader3.png")}
             />
             <Text style={[styles.library1, styles.createTypo]}>Library</Text>
           </View>

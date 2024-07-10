@@ -16,7 +16,7 @@ const Homepage = () => {
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-24.png")}
+                source={require("../assets/group-2.png")}
               />
               <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
             </View>
@@ -27,7 +27,7 @@ const Homepage = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/whmcs.png")}
+                source={require("../assets/settingsbtn.png")}
               />
             </Pressable>
           </View>

@@ -15,7 +15,7 @@ const HelpDesk = () => {
         <Image
           style={[styles.icon, styles.iconLayout]}
           resizeMode="cover"
-          source={require("../assets/whmcs.png")}
+          source={require("../assets/settingsbtn.png")}
         />
       </Pressable>
       <View style={styles.helpStatementWrapper}>
@@ -107,7 +107,7 @@ Begin adding your notes and turning them into flashcards.
                     ]}
                   >{`Need Assistance? If you have any questions or need help with the app, please reach out to our support team:
 Email: support@flashyapp.com
-Phone: +233-829-6141`}</Text>
+Phone: +233-598-296-141`}</Text>
                 </View>
               </View>
               <Text

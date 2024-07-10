@@ -61,7 +61,7 @@ const NewCard2 = () => {
             </View>
             <Pressable
               style={[styles.createbtn, styles.card1FlexBox]}
-              onPress={() => navigation.navigate("NewCard")}
+              onPress={() => navigation.navigate("NewCard1")}
             >
               <Text style={[styles.newCard, styles.newCardClr]}>New Card</Text>
             </Pressable>

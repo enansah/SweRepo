@@ -15,7 +15,7 @@ const Settings = () => {
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-23.png")}
+                source={require("../assets/group-24.png")}
               />
               <Text style={styles.lashy}>LASHY</Text>
             </View>
@@ -26,7 +26,7 @@ const Settings = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/settingsbtn4.png")}
+                source={require("../assets/settingsbtn5.png")}
               />
             </Pressable>
           </View>
@@ -52,7 +52,7 @@ const Settings = () => {
                 <Image
                   style={styles.eyeIcon}
                   resizeMode="cover"
-                  source={require("../assets/upload.png")}
+                  source={require("../assets/upload2.png")}
                 />
                 <Text style={styles.viewCourses}>{`sync
 notebook`}</Text>
@@ -94,7 +94,7 @@ notebook`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus4.png")}
+              source={require("../assets/plus6.png")}
             />
             <Text style={styles.createTypo}>Create</Text>
           </Pressable>
@@ -105,7 +105,7 @@ notebook`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home4.png")}
+              source={require("../assets/home7.png")}
             />
             <Text style={styles.createTypo}>Home</Text>
           </Pressable>
@@ -116,7 +116,7 @@ notebook`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader3.png")}
+              source={require("../assets/bookreader7.png")}
             />
             <Text style={[styles.library, styles.createTypo]}>Library</Text>
           </Pressable>
@@ -142,8 +142,8 @@ const styles = StyleSheet.create({
   uploadnotebtnLayout: {
     paddingVertical: Padding.p_xs,
     paddingHorizontal: Padding.p_6xs,
-    height: 109,
-    width: 148,
+    height: 110,
+    width: 200,
     backgroundColor: Color.colorBlack,
     borderRadius: Border.br_xl,
     justifyContent: "center",
@@ -219,8 +219,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   navParent: {
-    alignItems: "flex-end",
     alignSelf: "stretch",
+    alignItems: "center",
   },
   plusIcon: {
     width: 50,
@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
     height: 123,
     paddingHorizontal: Padding.p_smi,
     paddingVertical: Padding.p_sm,
-    marginTop: 53,
+    marginTop: 49,
     backgroundColor: Color.colorBlack,
     justifyContent: "center",
     flexDirection: "row",
@@ -256,9 +256,10 @@ const styles = StyleSheet.create({
   },
   frameParent: {
     position: "absolute",
-    marginLeft: -175.5,
+    marginLeft: -176,
     top: 27,
     left: "50%",
+    width: 352,
     alignItems: "center",
   },
   settings: {

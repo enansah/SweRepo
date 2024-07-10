@@ -15,7 +15,7 @@ const Create = () => {
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-24.png")}
+                source={require("../assets/group-2.png")}
               />
               <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
             </View>
@@ -26,14 +26,14 @@ const Create = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/whmcs.png")}
+                source={require("../assets/settingsbtn.png")}
               />
             </Pressable>
           </View>
           <View style={styles.newcardParent}>
             <Pressable
               style={[styles.newcard, styles.newcardFlexBox]}
-              onPress={() => navigation.navigate("NewCard1")}
+              onPress={() => navigation.navigate("NewCard11")}
             >
               <Text style={styles.newCard}>{`NEW
 CARD`}</Text>

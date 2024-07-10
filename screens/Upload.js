@@ -16,7 +16,7 @@ const Upload = () => {
                 <Image
                   style={styles.frameChild}
                   resizeMode="cover"
-                  source={require("../assets/group-23.png")}
+                  source={require("../assets/group-231.png")}
                 />
                 <Text style={styles.lashy}>LASHY</Text>
               </View>
@@ -28,7 +28,7 @@ const Upload = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/settingsbtn5.png")}
+                source={require("../assets/settingsbtn4.png")}
               />
             </Pressable>
           </View>
@@ -100,7 +100,7 @@ const Upload = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home4.png")}
+              source={require("../assets/home5.png")}
             />
             <Text style={styles.create1Typo}>Home</Text>
           </Pressable>
@@ -111,7 +111,7 @@ const Upload = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader3.png")}
+              source={require("../assets/bookreader5.png")}
             />
             <Text style={[styles.library, styles.create1Typo]}>Library</Text>
           </Pressable>
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
   },
   upload1: {
-    fontSize: 15,
+    fontSize: FontSize.size_mini,
     width: 68,
     height: 20,
     color: Color.bLACK,

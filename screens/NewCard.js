@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Padding, Border, FontFamily, FontSize, Color } from "../GlobalStyles";
 
-const NewCard = () => {
+const NewCard1 = () => {
   const navigation = useNavigation();
 
   return (
@@ -15,7 +15,7 @@ const NewCard = () => {
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-22.png")}
+                source={require("../assets/group-25.png")}
               />
               <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
             </View>
@@ -26,7 +26,7 @@ const NewCard = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/settingsbtn.png")}
+                source={require("../assets/settingsbtn3.png")}
               />
             </Pressable>
           </View>
@@ -51,9 +51,12 @@ const NewCard = () => {
                 </Text>
               </View>
             </View>
-            <View style={[styles.createbtn, styles.cardfrontSpaceBlock]}>
+            <Pressable
+              style={[styles.createbtn, styles.cardfrontSpaceBlock]}
+              onPress={() => navigation.navigate("Container")}
+            >
               <Text style={[styles.create, styles.createClr]}>Create</Text>
-            </View>
+            </Pressable>
           </View>
         </View>
         <View style={styles.footerbar}>
@@ -61,7 +64,7 @@ const NewCard = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus3.png")}
+              source={require("../assets/plus31.png")}
             />
             <Text style={[styles.create1, styles.homeTypo]}>Create</Text>
           </View>
@@ -72,7 +75,7 @@ const NewCard = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home3.png")}
+              source={require("../assets/home6.png")}
             />
             <Text style={[styles.home, styles.homeTypo]}>Home</Text>
           </Pressable>
@@ -83,7 +86,7 @@ const NewCard = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader2.png")}
+              source={require("../assets/bookreader6.png")}
             />
             <Text style={[styles.library, styles.homeTypo]}>Library</Text>
           </Pressable>
@@ -329,4 +332,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NewCard;
+export default NewCard1;

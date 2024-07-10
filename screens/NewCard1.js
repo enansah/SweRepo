@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, Border, FontSize, Padding } from "../GlobalStyles";
 
-const NewCard1 = () => {
+const NewCard11 = () => {
   const navigation = useNavigation();
 
   return (
@@ -15,7 +15,7 @@ const NewCard1 = () => {
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-24.png")}
+                source={require("../assets/group-26.png")}
               />
               <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
             </View>
@@ -26,7 +26,7 @@ const NewCard1 = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/whmcs.png")}
+                source={require("../assets/settingsbtn.png")}
               />
             </Pressable>
           </View>
@@ -291,4 +291,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NewCard1;
+export default NewCard11;

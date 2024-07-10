@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import { Image, StyleSheet, Text, View, Pressable, Modal } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import SharePop from "../components/SharePop";
-import { Padding, Color, Border, FontFamily, FontSize } from "../GlobalStyles";
+import { FontSize, FontFamily, Padding, Color, Border } from "../GlobalStyles";
 
 const Container = () => {
   const [shareBtnContainerVisible, setShareBtnContainerVisible] =
@@ -27,7 +27,7 @@ const Container = () => {
                 <Image
                   style={styles.frameChild}
                   resizeMode="cover"
-                  source={require("../assets/group-24.png")}
+                  source={require("../assets/group-2.png")}
                 />
                 <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
               </View>
@@ -38,32 +38,36 @@ const Container = () => {
                 <Image
                   style={[styles.icon, styles.iconLayout]}
                   resizeMode="cover"
-                  source={require("../assets/whmcs.png")}
+                  source={require("../assets/settingsbtn.png")}
                 />
               </Pressable>
             </View>
             <View style={styles.cardnameParent}>
               <View style={styles.groupParent}>
-                <View style={[styles.termNameWrapper, styles.sharebtnBorder]}>
-                  <Text style={[styles.termName, styles.shareFlexBox]}>
-                    term name
-                  </Text>
-                </View>
                 <Pressable
-                  style={[styles.sharebtn, styles.sharebtnBorder]}
+                  style={styles.sharebtn}
                   onPress={openShareBtnContainer}
                 >
-                  <Text style={[styles.share, styles.shareFlexBox]}>Share</Text>
+                  <Text style={[styles.share, styles.shareTypo]}>Share</Text>
                 </Pressable>
               </View>
-              <View style={styles.contentofcard}>
-                <Text style={styles.notes}>content here</Text>
+              <View style={styles.card1Parent}>
+                <View style={styles.cardBorder}>
+                  <Text style={[styles.cardContent, styles.shareTypo]}>
+                    Card content
+                  </Text>
+                </View>
+                <View style={[styles.card11, styles.cardBorder]}>
+                  <Text style={[styles.cardContent, styles.shareTypo]}>
+                    Card content
+                  </Text>
+                </View>
               </View>
             </View>
           </View>
-          <View style={[styles.footerbar, styles.lashyFlexBox]}>
+          <View style={[styles.footerbar, styles.footerbarFlexBox]}>
             <Pressable
-              style={[styles.createcardbtn, styles.lashyFlexBox]}
+              style={[styles.createcardbtn, styles.footerbarFlexBox]}
               onPress={() => navigation.navigate("Create")}
             >
               <Image
@@ -88,7 +92,7 @@ const Container = () => {
               <Image
                 style={styles.plusIcon}
                 resizeMode="cover"
-                source={require("../assets/bookreader5.png")}
+                source={require("../assets/bookreader3.png")}
               />
               <Text style={[styles.library, styles.createTypo]}>Library</Text>
             </View>
@@ -119,28 +123,29 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   lashyFlexBox: {
+    width: 70,
+    textAlign: "center",
     justifyContent: "center",
+  },
+  shareTypo: {
+    fontSize: FontSize.size_xl,
+    display: "flex",
+    fontFamily: FontFamily.interLight,
+    fontWeight: "300",
     alignItems: "center",
   },
-  sharebtnBorder: {
-    paddingVertical: Padding.p_6xs,
-    paddingHorizontal: Padding.p_8xl,
-    height: 41,
+  cardBorder: {
+    padding: Padding.p_8xs,
+    height: 187,
+    backgroundColor: Color.colorWhitesmoke,
+    borderRadius: Border.br_3xs,
     borderWidth: 1,
     borderColor: Color.colorBlack,
     borderStyle: "solid",
-    borderRadius: Border.br_8xs,
-    justifyContent: "center",
-    flexDirection: "row",
-    alignItems: "center",
+    alignSelf: "stretch",
   },
-  shareFlexBox: {
-    color: Color.bLACK,
+  footerbarFlexBox: {
     justifyContent: "center",
-    display: "flex",
-    textAlign: "center",
-    fontFamily: FontFamily.interLight,
-    fontWeight: "300",
     alignItems: "center",
   },
   createTypo: {
@@ -160,15 +165,15 @@ const styles = StyleSheet.create({
   },
   lashy: {
     fontSize: FontSize.size_mid,
+    color: Color.colorBlack,
     height: 23,
     marginLeft: -15,
-    width: 70,
     display: "flex",
-    justifyContent: "center",
-    textAlign: "center",
-    color: Color.colorBlack,
     fontFamily: FontFamily.interLight,
     fontWeight: "300",
+    width: 70,
+    textAlign: "center",
+    alignItems: "center",
   },
   groupParent: {
     flexDirection: "row",
@@ -184,15 +189,6 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     alignItems: "center",
   },
-  termName: {
-    fontSize: FontSize.size_6xl,
-    height: 40,
-    flex: 1,
-  },
-  termNameWrapper: {
-    backgroundColor: Color.colorGray_100,
-    width: 196,
-  },
   shareBtnContainerOverlay: {
     flex: 1,
     alignItems: "center",
@@ -207,27 +203,39 @@ const styles = StyleSheet.create({
     top: 0,
   },
   share: {
-    fontSize: FontSize.size_xl,
+    color: Color.bLACK,
     height: 27,
     width: 70,
+    textAlign: "center",
+    justifyContent: "center",
+    fontSize: FontSize.size_xl,
   },
   sharebtn: {
+    borderRadius: Border.br_8xs,
     backgroundColor: Color.gREEN,
     width: 81,
-    marginLeft: 7,
-  },
-  notes: {
-    fontSize: FontSize.size_base,
-    textAlign: "center",
-    color: Color.colorBlack,
-    fontFamily: FontFamily.interLight,
-    fontWeight: "300",
-  },
-  contentofcard: {
-    width: 288,
-    height: 480,
-    marginTop: 17,
+    height: 41,
+    paddingHorizontal: Padding.p_8xl,
+    paddingVertical: Padding.p_6xs,
+    borderWidth: 1,
+    borderColor: Color.colorBlack,
+    borderStyle: "solid",
+    justifyContent: "center",
+    flexDirection: "row",
     alignItems: "center",
+  },
+  cardContent: {
+    color: Color.colorDarkslategray,
+    textAlign: "left",
+    height: 20,
+    alignSelf: "stretch",
+  },
+  card11: {
+    marginTop: 10,
+  },
+  card1Parent: {
+    marginTop: 17,
+    alignSelf: "stretch",
   },
   cardnameParent: {
     height: 558,
@@ -280,9 +288,9 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: Color.white,
+    flex: 1,
     height: 844,
     overflow: "hidden",
-    flex: 1,
   },
 });
 

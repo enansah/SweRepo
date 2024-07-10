@@ -76,7 +76,7 @@ const Notification1 = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home5.png")}
+              source={require("../assets/home4.png")}
             />
             <Text style={styles.createTypo}>Home</Text>
           </Pressable>

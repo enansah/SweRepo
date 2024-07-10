@@ -40,13 +40,12 @@ on Flashy`}</Text>
               source={require("../assets/ellipse-12.png")}
             />
           </View>
-          <View style={[styles.nextbtn, styles.parentFlexBox]}>
-            <Pressable
-              onPress={() => navigation.navigate("SyncNotesAppOnboarding")}
-            >
-              <Text style={styles.next1}>Next</Text>
-            </Pressable>
-          </View>
+          <Pressable
+            style={[styles.nextbtn, styles.parentFlexBox]}
+            onPress={() => navigation.navigate("LoginScreen")}
+          >
+            <Text style={styles.next}>Next</Text>
+          </Pressable>
         </View>
       </View>
     </View>
@@ -86,7 +85,7 @@ const styles = StyleSheet.create({
   frameItem: {
     marginLeft: 10,
   },
-  next1: {
+  next: {
     fontSize: FontSize.size_base,
     fontFamily: FontFamily.interRegular,
     color: Color.bLACK,
