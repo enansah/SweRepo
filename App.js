@@ -15,13 +15,13 @@ import PhoneVerification from "./screens/PhoneVerification";
 import LoginScreen from "./screens/LoginScreen";
 import ForgetPassword from "./screens/ForgetPassword";
 import Create from "./screens/Create";
+import NewCourse from "./screens/NewCourse";
 import Settings from "./screens/Settings";
 import NewCard3 from "./screens/NewCard3";
 import Library from "./screens/Library";
+import NewCard11 from "./screens/NewCard11";
 import HelpDesk from "./screens/HelpDesk";
 import Notification1 from "./screens/Notification1";
-import NewCard11 from "./screens/NewCard11";
-import NewCourse from "./screens/NewCourse";
 import Upload from "./screens/Upload";
 import NewCard1 from "./screens/NewCard1";
 import Container from "./screens/Container";
@@ -104,6 +104,11 @@ const App = () => {
               options={{ headerShown: false }}
             />
             <Stack.Screen
+              name="NewCourse"
+              component={NewCourse}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
               name="Settings"
               component={Settings}
               options={{ headerShown: false }}
@@ -119,6 +124,11 @@ const App = () => {
               options={{ headerShown: false }}
             />
             <Stack.Screen
+              name="NewCard11"
+              component={NewCard11}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
               name="HelpDesk"
               component={HelpDesk}
               options={{ headerShown: false }}
@@ -126,16 +136,6 @@ const App = () => {
             <Stack.Screen
               name="Notification1"
               component={Notification1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="NewCard11"
-              component={NewCard11}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="NewCourse"
-              component={NewCourse}
               options={{ headerShown: false }}
             />
             <Stack.Screen

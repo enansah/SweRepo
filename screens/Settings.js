@@ -15,7 +15,7 @@ const Settings = () => {
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-241.png")}
+                source={require("../assets/group-23.png")}
               />
               <Text style={styles.lashy}>LASHY</Text>
             </View>
@@ -26,7 +26,7 @@ const Settings = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/settingsbtn4.png")}
+                source={require("../assets/settingsbtn.png")}
               />
             </Pressable>
           </View>
@@ -94,7 +94,7 @@ notebook`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus4.png")}
+              source={require("../assets/plus.png")}
             />
             <Text style={styles.createTypo}>Create</Text>
           </Pressable>
@@ -105,7 +105,7 @@ notebook`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home4.png")}
+              source={require("../assets/home3.png")}
             />
             <Text style={styles.createTypo}>Home</Text>
           </Pressable>
@@ -116,7 +116,7 @@ notebook`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader3.png")}
+              source={require("../assets/bookreader.png")}
             />
             <Text style={[styles.library, styles.createTypo]}>Library</Text>
           </Pressable>

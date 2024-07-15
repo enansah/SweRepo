@@ -16,7 +16,7 @@ const Homepage = () => {
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-2.png")}
+                source={require("../assets/group-210.png")}
               />
               <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
             </View>
@@ -27,7 +27,7 @@ const Homepage = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/settingsbtn.png")}
+                source={require("../assets/settingsbtn2.png")}
               />
             </Pressable>
           </View>
@@ -41,7 +41,7 @@ const Homepage = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus.png")}
+              source={require("../assets/plus5.png")}
             />
             <Text style={styles.createTypo}>Create</Text>
           </Pressable>
@@ -60,7 +60,7 @@ const Homepage = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader.png")}
+              source={require("../assets/bookreader5.png")}
             />
             <Text style={[styles.library, styles.createTypo]}>Library</Text>
           </Pressable>

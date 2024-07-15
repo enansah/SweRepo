@@ -1,18 +1,15 @@
 import * as React from "react";
 import {
-  View,
   Image,
   StyleSheet,
   Text,
+  View,
   Pressable,
   TextInput,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import { Border, Color, FontFamily, FontSize, Padding } from "../GlobalStyles";
 
-const SharePop = ({ onClose }) => {
-  const navigation = useNavigation();
-
+const SharePop = () => {
   return (
     <View style={[styles.sharepop, styles.sharepopFlexBox]}>
       <View style={styles.navParent}>
@@ -25,17 +22,12 @@ const SharePop = ({ onClose }) => {
             />
             <Text style={[styles.lashy, styles.lashyTypo]}>LASHY</Text>
           </View>
-          <Pressable
-            style={styles.closebtn}
-            onPress={() => navigation.goBack()}
-          >
-            <Image
-              style={styles.icon}
-              close="close"
-              resizeMode="cover"
-              source={require("../assets/closebtn.png")}
-            />
-          </Pressable>
+          <Image
+            style={styles.closebtnIcon}
+            close="close"
+            resizeMode="cover"
+            source={require("../assets/closebtn.png")}
+          />
         </View>
         <View style={[styles.shareThisCardWrapper, styles.navFlexBox]}>
           <Text style={[styles.shareThisCard, styles.lashyTypo]}>
@@ -110,11 +102,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  icon: {
-    width: "100%",
-    height: "100%",
-  },
-  closebtn: {
+  closebtnIcon: {
     width: 20,
     height: 20,
   },
@@ -181,8 +169,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_xl,
     paddingTop: 33,
     paddingBottom: 35,
-    maxWidth: "100%",
-    maxHeight: "100%",
     alignItems: "center",
   },
 });
