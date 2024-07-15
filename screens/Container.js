@@ -27,7 +27,7 @@ const Container = () => {
                 <Image
                   style={styles.frameChild}
                   resizeMode="cover"
-                  source={require("../assets/group-2.png")}
+                  source={require("../assets/group-210.png")}
                 />
                 <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
               </View>
@@ -38,7 +38,7 @@ const Container = () => {
                 <Image
                   style={[styles.icon, styles.iconLayout]}
                   resizeMode="cover"
-                  source={require("../assets/settingsbtn.png")}
+                  source={require("../assets/settingsbtn2.png")}
                 />
               </Pressable>
             </View>
@@ -73,7 +73,7 @@ const Container = () => {
               <Image
                 style={styles.plusIcon}
                 resizeMode="cover"
-                source={require("../assets/plus.png")}
+                source={require("../assets/plus5.png")}
               />
               <Text style={[styles.create, styles.createTypo]}>Create</Text>
             </Pressable>
@@ -84,7 +84,7 @@ const Container = () => {
               <Image
                 style={styles.plusIcon}
                 resizeMode="cover"
-                source={require("../assets/home2.png")}
+                source={require("../assets/home5.png")}
               />
               <Text style={[styles.create, styles.createTypo]}>Home</Text>
             </Pressable>
@@ -92,7 +92,7 @@ const Container = () => {
               <Image
                 style={styles.plusIcon}
                 resizeMode="cover"
-                source={require("../assets/bookreader3.png")}
+                source={require("../assets/bookreader4.png")}
               />
               <Text style={[styles.library, styles.createTypo]}>Library</Text>
             </View>

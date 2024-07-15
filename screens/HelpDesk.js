@@ -15,7 +15,7 @@ const HelpDesk = () => {
         <Image
           style={[styles.icon, styles.iconLayout]}
           resizeMode="cover"
-          source={require("../assets/settingsbtn.png")}
+          source={require("../assets/settingsbtn2.png")}
         />
       </Pressable>
       <View style={styles.helpStatementWrapper}>
@@ -126,7 +126,7 @@ Happy studying!`}</Text>
           <Image
             style={styles.plusIcon}
             resizeMode="cover"
-            source={require("../assets/plus.png")}
+            source={require("../assets/plus5.png")}
           />
           <Text style={styles.createTypo}>Create</Text>
         </Pressable>
@@ -137,7 +137,7 @@ Happy studying!`}</Text>
           <Image
             style={styles.plusIcon}
             resizeMode="cover"
-            source={require("../assets/home2.png")}
+            source={require("../assets/home5.png")}
           />
           <Text style={styles.createTypo}>Home</Text>
         </Pressable>
@@ -148,7 +148,7 @@ Happy studying!`}</Text>
           <Image
             style={styles.plusIcon}
             resizeMode="cover"
-            source={require("../assets/bookreader.png")}
+            source={require("../assets/bookreader5.png")}
           />
           <Text style={[styles.library, styles.createTypo]}>Library</Text>
         </Pressable>

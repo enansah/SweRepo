@@ -1,5 +1,12 @@
 import * as React from "react";
-import { Image, StyleSheet, Text, View, Pressable } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  TextInput,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Color, Border, Padding, FontSize, FontFamily } from "../GlobalStyles";
 
@@ -28,7 +35,7 @@ const Upload = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/settingsbtn4.png")}
+                source={require("../assets/settingsbtn5.png")}
               />
             </Pressable>
           </View>
@@ -51,32 +58,31 @@ const Upload = () => {
                   <View
                     style={[styles.uploadspace, styles.uploadspaceBorder]}
                   />
-                  <View style={[styles.submitbtn, styles.submitbtnLayout]}>
-                    <Text style={[styles.submit, styles.submitTypo]}>
-                      Submit
-                    </Text>
-                  </View>
+                  <Pressable style={[styles.submitbtn, styles.submitbtnLayout]}>
+                    <Text style={styles.submit}>Submit</Text>
+                  </Pressable>
                 </View>
               </View>
             </View>
             <View style={[styles.frameContainer, styles.uplodcontainerLayout]}>
               <View style={styles.coursenameParent}>
-                <View style={[styles.coursename, styles.describeBorder]}>
-                  <Text
-                    style={[styles.courseName, styles.submitTypo]}
-                  >{`course name `}</Text>
-                </View>
-                <View style={[styles.describe, styles.describeBorder]}>
-                  <Text style={[styles.courseName, styles.submitTypo]}>
-                    description(optional)
-                  </Text>
-                </View>
+                <TextInput
+                  style={[styles.coursename, styles.describeTypo]}
+                  placeholder="course name "
+                  placeholderTextColor="#1a1a1a"
+                />
+                <TextInput
+                  style={[styles.describe, styles.describeTypo]}
+                  placeholder="description(optional)"
+                  multiline={true}
+                  placeholderTextColor="#1a1a1a"
+                />
               </View>
               <Pressable
                 style={[styles.createbtn, styles.submitbtnLayout]}
                 onPress={() => navigation.navigate("NewCard3")}
               >
-                <Text style={[styles.submit, styles.submitTypo]}>Create</Text>
+                <Text style={styles.submit}>Create</Text>
               </Pressable>
             </View>
           </View>
@@ -89,7 +95,7 @@ const Upload = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus4.png")}
+              source={require("../assets/plus7.png")}
             />
             <Text style={styles.create1Typo}>Create</Text>
           </Pressable>
@@ -100,7 +106,7 @@ const Upload = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home5.png")}
+              source={require("../assets/home7.png")}
             />
             <Text style={styles.create1Typo}>Home</Text>
           </Pressable>
@@ -111,7 +117,7 @@ const Upload = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader5.png")}
+              source={require("../assets/bookreader7.png")}
             />
             <Text style={[styles.library, styles.create1Typo]}>Library</Text>
           </Pressable>
@@ -149,20 +155,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  submitTypo: {
-    fontSize: FontSize.size_base,
-    color: Color.bLACK,
-    textAlign: "center",
-  },
-  describeBorder: {
+  describeTypo: {
     paddingVertical: Padding.p_6xs,
-    borderRadius: Border.br_31xl,
+    paddingHorizontal: Padding.p_xl,
+    fontSize: FontSize.size_base,
     borderWidth: 1,
     borderColor: Color.colorBlack,
     borderStyle: "solid",
     backgroundColor: Color.colorGray_100,
     justifyContent: "center",
-    height: 40,
+    fontFamily: FontFamily.interLight,
+    fontWeight: "300",
     flexDirection: "row",
     alignItems: "center",
   },
@@ -249,6 +252,9 @@ const styles = StyleSheet.create({
   },
   submit: {
     fontFamily: FontFamily.interRegular,
+    fontSize: FontSize.size_base,
+    color: Color.bLACK,
+    textAlign: "center",
   },
   submitbtn: {
     marginTop: 10,
@@ -276,19 +282,17 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     alignItems: "center",
   },
-  courseName: {
-    fontFamily: FontFamily.interLight,
-    fontWeight: "300",
-    fontSize: FontSize.size_base,
-    flex: 1,
-  },
   coursename: {
     width: 326,
-    paddingHorizontal: Padding.p_8xl,
+    borderRadius: Border.br_31xl,
+    paddingHorizontal: Padding.p_xl,
+    height: 40,
   },
   describe: {
-    paddingHorizontal: Padding.p_mini,
     marginTop: 10,
+    height: 50,
+    paddingHorizontal: Padding.p_xl,
+    borderRadius: Border.br_xl,
     alignSelf: "stretch",
   },
   coursenameParent: {
@@ -296,7 +300,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   createbtn: {
-    marginTop: 50,
+    marginTop: 40,
   },
   frameContainer: {
     marginTop: 26,
@@ -349,10 +353,9 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   upload: {
+    flex: 1,
     height: 844,
     overflow: "hidden",
-    flex: 1,
-    width: "100%",
     backgroundColor: Color.white,
   },
 });

@@ -49,7 +49,7 @@ COURSE`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus2.png")}
+              source={require("../assets/plus3.png")}
             />
             <Text style={styles.create1}>Create</Text>
           </View>
@@ -60,7 +60,7 @@ COURSE`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home2.png")}
+              source={require("../assets/home3.png")}
             />
             <Text style={styles.homeTypo}>Home</Text>
           </Pressable>

@@ -1,86 +1,128 @@
 import * as React from "react";
-import { Text, StyleSheet, View, Pressable } from "react-native";
-import { FontFamily, FontSize, Color, Border, Padding } from "../GlobalStyles";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Pressable,
+} from "react-native";
+import { Color, FontSize, FontFamily, Border, Padding } from "../GlobalStyles";
 
 const PhoneVerification = () => {
   return (
     <View style={styles.phoneVerification}>
       <View style={styles.frameParent}>
-        <View style={styles.verifyParent}>
-          <Text style={[styles.verify, styles.verifyFlexBox]}>VERIFY</Text>
-          <View style={styles.frameGroup}>
-            <View
-              style={[
-                styles.enterThe4DigitCodeWrapper,
-                styles.enterWrapperFlexBox,
-              ]}
-            >
-              <Text style={[styles.enterThe4, styles.textTypo]}>
-                Enter the 4 digit code.
-              </Text>
-            </View>
-            <View style={[styles.frameContainer, styles.enterWrapperFlexBox]}>
-              <View style={[styles.frameView, styles.verifyFlexBox]}>
-                <View style={[styles.wrapper, styles.wrapperBorder]}>
-                  <Text style={[styles.text, styles.textTypo]}>0</Text>
-                </View>
-                <View style={[styles.frameChild, styles.frameBorder]} />
+        <View style={[styles.groupParent, styles.groupParentLayout]}>
+          <Image
+            style={styles.frameChild}
+            resizeMode="cover"
+            source={require("../assets/group-26.png")}
+          />
+          <Text style={[styles.lashy, styles.lashyClr]}>LASHY</Text>
+        </View>
+        <View style={[styles.frameGroup, styles.frameSpaceBlock]}>
+          <View style={styles.verifyParent}>
+            <Text style={[styles.verify, styles.lashyClr]}>VERIFY</Text>
+            <View style={[styles.frameContainer, styles.frameSpaceBlock]}>
+              <View
+                style={[
+                  styles.enterThe4DigitCodeWrapper,
+                  styles.frameItemBorder,
+                ]}
+              >
+                <Text style={[styles.enterThe4, styles.enterThe4Typo]}>
+                  Enter the 4 digit code.
+                </Text>
               </View>
-              <View style={[styles.frameParent1, styles.frameParentFlexBox]}>
-                <View style={[styles.wrapper, styles.wrapperBorder]}>
-                  <Text style={[styles.text, styles.textTypo]}>0</Text>
+              <View style={styles.frameView}>
+                <View style={styles.frameParent1}>
+                  <TextInput
+                    style={[styles.frameItem, styles.enterThe4Typo]}
+                    placeholder="0"
+                    keyboardType="number-pad"
+                    autoCapitalize="none"
+                    placeholderTextColor="#b6b6b6"
+                    maxLength={1}
+                  />
+                  <View style={[styles.frameInner, styles.lineViewBorder]} />
                 </View>
-                <View style={[styles.frameItem, styles.frameBorder]} />
-              </View>
-              <View style={[styles.frameParent1, styles.frameParentFlexBox]}>
-                <View style={[styles.wrapper, styles.wrapperBorder]}>
-                  <Text style={[styles.text, styles.textTypo]}>0</Text>
+                <View style={[styles.frameParent2, styles.frameParentFlexBox]}>
+                  <TextInput
+                    style={[styles.frameItem, styles.enterThe4Typo]}
+                    placeholder="0"
+                    keyboardType="number-pad"
+                    autoCapitalize="none"
+                    placeholderTextColor="#b6b6b6"
+                    maxLength={1}
+                  />
+                  <View style={[styles.lineView, styles.lineViewBorder]} />
                 </View>
-                <View style={[styles.frameItem, styles.frameBorder]} />
-              </View>
-              <View style={[styles.frameParent3, styles.frameParentFlexBox]}>
-                <View style={[styles.wrapper, styles.wrapperBorder]}>
-                  <Text style={[styles.text, styles.textTypo]}>0</Text>
+                <View style={[styles.frameParent2, styles.frameParentFlexBox]}>
+                  <TextInput
+                    style={[styles.frameItem, styles.enterThe4Typo]}
+                    placeholder="0"
+                    keyboardType="number-pad"
+                    autoCapitalize="none"
+                    placeholderTextColor="#b6b6b6"
+                    maxLength={1}
+                  />
+                  <View style={[styles.lineView, styles.lineViewBorder]} />
                 </View>
-                <View style={[styles.frameItem, styles.frameBorder]} />
+                <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
+                  <TextInput
+                    style={[styles.frameItem, styles.enterThe4Typo]}
+                    placeholder="0"
+                    keyboardType="number-pad"
+                    autoCapitalize="none"
+                    placeholderTextColor="#b6b6b6"
+                    maxLength={1}
+                  />
+                  <View style={[styles.lineView, styles.lineViewBorder]} />
+                </View>
               </View>
             </View>
           </View>
+          <Pressable
+            style={[styles.enterWrapper, styles.frameSpaceBlock]}
+            c1="Enter"
+          >
+            <Text style={styles.enter}>Enter</Text>
+          </Pressable>
         </View>
-        <Pressable
-          style={[styles.enterWrapper, styles.enterWrapperFlexBox]}
-          c1="Enter"
-        >
-          <Text style={styles.enter}>Enter</Text>
-        </Pressable>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  verifyFlexBox: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  enterWrapperFlexBox: {
+  groupParentLayout: {
+    width: 122,
     flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
   },
-  textTypo: {
-    fontFamily: FontFamily.interLight,
-    fontWeight: "300",
-    fontSize: FontSize.size_13xl,
+  lashyClr: {
+    display: "flex",
+    color: Color.colorBlack,
     textAlign: "center",
   },
-  wrapperBorder: {
+  frameSpaceBlock: {
+    marginTop: 38,
+    alignItems: "center",
+  },
+  frameItemBorder: {
+    backgroundColor: Color.colorGainsboro,
     borderWidth: 1,
     borderColor: Color.colorBlack,
     borderStyle: "solid",
-    backgroundColor: Color.colorGainsboro,
   },
-  frameBorder: {
+  enterThe4Typo: {
+    fontSize: FontSize.size_13xl,
+    justifyContent: "center",
+    fontFamily: FontFamily.interLight,
+    fontWeight: "300",
+    alignItems: "center",
+  },
+  lineViewBorder: {
     height: 3,
     borderTopWidth: 3,
     borderColor: Color.colorBlack,
@@ -92,68 +134,87 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  frameChild: {
+    width: 62,
+    height: 51,
+  },
+  lashy: {
+    fontSize: FontSize.size_xl,
+    width: 75,
+    height: 38,
+    marginLeft: -15,
+    justifyContent: "center",
+    fontFamily: FontFamily.interLight,
+    fontWeight: "300",
+    display: "flex",
+    color: Color.colorBlack,
+    alignItems: "center",
+  },
+  groupParent: {
+    height: 77,
+    flexDirection: "row",
+    alignItems: "center",
+  },
   verify: {
     fontSize: FontSize.size_21xl,
     fontWeight: "600",
     fontFamily: FontFamily.sourceSansPro,
     height: 54,
-    display: "flex",
-    color: Color.colorBlack,
-    justifyContent: "center",
-    textAlign: "center",
     alignSelf: "stretch",
+    justifyContent: "center",
+    alignItems: "center",
   },
   enterThe4: {
     width: 271,
-    justifyContent: "center",
-    alignItems: "center",
     display: "flex",
     color: Color.colorBlack,
+    textAlign: "center",
   },
   enterThe4DigitCodeWrapper: {
     borderRadius: Border.br_8xs,
     height: 125,
     paddingHorizontal: Padding.p_8xl,
     paddingVertical: Padding.p_xl,
+    alignSelf: "stretch",
+    justifyContent: "center",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  frameItem: {
+    height: 52,
+    paddingHorizontal: Padding.p_mini,
+    paddingVertical: Padding.p_7xs,
+    width: 52,
+    backgroundColor: Color.colorGainsboro,
     borderWidth: 1,
     borderColor: Color.colorBlack,
     borderStyle: "solid",
-    backgroundColor: Color.colorGainsboro,
-    alignSelf: "stretch",
   },
-  text: {
-    color: Color.colorSilver_200,
+  frameInner: {
+    marginTop: 8,
   },
-  wrapper: {
-    height: 52,
-    paddingHorizontal: Padding.p_3xs,
-    paddingVertical: Padding.p_7xs,
+  frameParent1: {
     width: 52,
     justifyContent: "center",
     alignItems: "center",
   },
-  frameChild: {
-    marginTop: 8,
-  },
-  frameView: {
-    width: 52,
-  },
-  frameItem: {
+  lineView: {
     marginTop: 7,
   },
-  frameParent1: {
+  frameParent2: {
     width: 52,
   },
-  frameParent3: {
+  frameParent4: {
     width: 53,
   },
-  frameContainer: {
+  frameView: {
     marginTop: 52,
-  },
-  frameGroup: {
-    marginTop: 38,
-    alignSelf: "stretch",
+    justifyContent: "center",
+    flexDirection: "row",
     alignItems: "center",
+  },
+  frameContainer: {
+    alignSelf: "stretch",
   },
   verifyParent: {
     alignSelf: "stretch",
@@ -168,14 +229,25 @@ const styles = StyleSheet.create({
   enterWrapper: {
     borderRadius: Border.br_31xl,
     backgroundColor: Color.colorBlack,
-    width: 122,
     height: 49,
     padding: Padding.p_2xs,
+    justifyContent: "center",
+    flexDirection: "row",
+    width: 122,
+  },
+  frameGroup: {
+    borderRadius: Border.br_xl,
+    paddingHorizontal: Padding.p_3xs,
+    paddingVertical: Padding.p_xl,
+    alignSelf: "stretch",
+    borderWidth: 1,
+    borderColor: Color.colorBlack,
+    borderStyle: "solid",
     marginTop: 38,
   },
   frameParent: {
     position: "absolute",
-    marginTop: -208,
+    marginTop: -285,
     marginLeft: -163,
     top: "50%",
     left: "50%",

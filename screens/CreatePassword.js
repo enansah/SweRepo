@@ -1,58 +1,103 @@
 import * as React from "react";
-import { Text, StyleSheet, View, Pressable } from "react-native";
-import { Padding, Color, Border, FontSize, FontFamily } from "../GlobalStyles";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Pressable,
+} from "react-native";
+import { Color, Padding, FontSize, FontFamily, Border } from "../GlobalStyles";
 
 const CreatePassword = () => {
   return (
     <View style={styles.createPassword}>
       <View style={styles.frameParent}>
-        <View style={styles.createPasswordParent}>
-          <Text style={[styles.createPassword1, styles.passwordFlexBox]}>
-            CREATE PASSWORD
-          </Text>
-          <View style={[styles.frameGroup, styles.passwordFlexBox]}>
-            <View style={styles.passwordWrapperBorder}>
-              <Text style={[styles.newPassword, styles.passwordFlexBox]}>
-                new password
-              </Text>
-            </View>
-            <View
-              style={[
-                styles.verifyPasswordWrapper,
-                styles.passwordWrapperBorder,
-              ]}
-            >
-              <Text style={[styles.newPassword, styles.passwordFlexBox]}>
-                verify password
-              </Text>
+        <View style={styles.groupParent}>
+          <Image
+            style={styles.frameChild}
+            resizeMode="cover"
+            source={require("../assets/group-25.png")}
+          />
+          <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
+        </View>
+        <View style={[styles.frameGroup, styles.frameBorder]}>
+          <View style={styles.createPasswordParent}>
+            <Text style={[styles.createPassword1, styles.lashyFlexBox]}>
+              CREATE PASSWORD
+            </Text>
+            <View style={styles.frameContainer}>
+              <View style={styles.frameView}>
+                <TextInput
+                  style={[styles.frameItem, styles.frameBorder]}
+                  placeholder="new password"
+                  autoCapitalize="none"
+                  secureTextEntry={true}
+                  placeholderTextColor="#000"
+                  passwordRules="true"
+                />
+                <Image
+                  style={styles.eyeIcon}
+                  resizeMode="cover"
+                  source={require("../assets/eye1.png")}
+                />
+              </View>
+              <View style={styles.frameParent1}>
+                <TextInput
+                  style={[styles.frameItem, styles.frameBorder]}
+                  placeholder="verify password"
+                  autoCapitalize="none"
+                  secureTextEntry={true}
+                  placeholderTextColor="#000"
+                  passwordRules="true"
+                />
+                <Image
+                  style={styles.eyeIcon}
+                  resizeMode="cover"
+                  source={require("../assets/eye1.png")}
+                />
+              </View>
             </View>
           </View>
+          <Pressable style={styles.createWrapper} crr="Create">
+            <Text style={styles.create}>Create</Text>
+          </Pressable>
         </View>
-        <Pressable style={styles.createWrapper} crr="Create">
-          <Text style={styles.create}>Create</Text>
-        </Pressable>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  passwordFlexBox: {
+  lashyFlexBox: {
+    display: "flex",
+    color: Color.colorBlack,
     justifyContent: "center",
+    textAlign: "center",
     alignItems: "center",
   },
-  passwordWrapperBorder: {
-    paddingVertical: Padding.p_6xs,
-    paddingHorizontal: Padding.p_7xl,
-    height: 46,
+  frameBorder: {
+    paddingHorizontal: Padding.p_3xs,
     borderWidth: 1,
     borderColor: Color.colorBlack,
     borderStyle: "solid",
-    backgroundColor: Color.colorGainsboro,
-    borderRadius: Border.br_3xs,
-    flexDirection: "row",
+    alignItems: "center",
+  },
+  frameChild: {
+    width: 80,
+    height: 88,
+  },
+  lashy: {
+    fontSize: FontSize.size_6xl,
+    width: 84,
+    height: 38,
+    marginLeft: -20,
     justifyContent: "center",
-    alignSelf: "stretch",
+    fontFamily: FontFamily.interLight,
+    fontWeight: "300",
+  },
+  groupParent: {
+    flexDirection: "row",
     alignItems: "center",
   },
   createPassword1: {
@@ -60,28 +105,43 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontFamily: FontFamily.sourceSansPro,
     height: 54,
-    display: "flex",
-    color: Color.colorBlack,
-    justifyContent: "center",
-    textAlign: "center",
     alignSelf: "stretch",
-  },
-  newPassword: {
-    fontSize: FontSize.size_6xl,
-    fontWeight: "300",
-    fontFamily: FontFamily.interLight,
-    width: 305,
-    display: "flex",
-    color: Color.colorBlack,
     justifyContent: "center",
-    textAlign: "center",
   },
-  verifyPasswordWrapper: {
+  frameItem: {
+    borderRadius: Border.br_3xs,
+    backgroundColor: Color.colorGainsboro,
+    width: 275,
+    height: 46,
+    paddingVertical: Padding.p_6xs,
+    fontSize: FontSize.size_xl,
+    justifyContent: "center",
+    fontFamily: FontFamily.interLight,
+    fontWeight: "300",
+    flexDirection: "row",
+  },
+  eyeIcon: {
+    width: 25,
+    height: 25,
+    marginLeft: 5,
+    overflow: "hidden",
+  },
+  frameView: {
+    alignSelf: "stretch",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  frameParent1: {
     marginTop: 21,
+    alignSelf: "stretch",
+    flexDirection: "row",
+    alignItems: "center",
   },
-  frameGroup: {
+  frameContainer: {
     marginTop: 40,
     alignSelf: "stretch",
+    justifyContent: "center",
+    alignItems: "center",
   },
   createPasswordParent: {
     alignSelf: "stretch",
@@ -100,13 +160,19 @@ const styles = StyleSheet.create({
     height: 49,
     padding: Padding.p_2xs,
     marginTop: 48,
-    flexDirection: "row",
     justifyContent: "center",
+    flexDirection: "row",
     alignItems: "center",
+  },
+  frameGroup: {
+    borderRadius: Border.br_xl,
+    paddingVertical: Padding.p_xl,
+    marginTop: 50,
+    alignSelf: "stretch",
   },
   frameParent: {
     position: "absolute",
-    marginTop: -152,
+    marginTop: -241,
     marginLeft: -163,
     top: "50%",
     left: "50%",

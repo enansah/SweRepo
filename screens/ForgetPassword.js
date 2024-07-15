@@ -1,60 +1,106 @@
 import * as React from "react";
-import { Text, StyleSheet, View, Pressable, Image } from "react-native";
-import { FontFamily, Color, FontSize, Border, Padding } from "../GlobalStyles";
+import {
+  Pressable,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+} from "react-native";
+import { Color, Padding, FontSize, FontFamily, Border } from "../GlobalStyles";
 
 const ForgetPassword = () => {
   return (
     <View style={styles.forgetPassword}>
-      <View style={styles.frameParent}>
-        <View style={styles.forgetPasswordParent}>
-          <Text style={[styles.forgetPassword1, styles.frameGroupFlexBox]}>
-            FORGET PASSWORD?
-          </Text>
-          <View style={[styles.frameGroup, styles.frameGroupFlexBox]}>
-            <View style={[styles.enterEmailWrapper, styles.wrapperFlexBox]}>
-              <Text style={[styles.enterEmail, styles.enterEmailTypo]}>
-                enter email
-              </Text>
-            </View>
-            <Text style={[styles.aPasswordReset, styles.enterEmailTypo]}>
-              A password reset link will be sent to the associate email.
-            </Text>
-          </View>
-        </View>
-        <Pressable
-          style={[styles.continueWrapper, styles.wrapperFlexBox]}
-          c2="Continue"
-        >
-          <Text style={styles.continue}>Continue</Text>
-        </Pressable>
-      </View>
       <Image
         style={styles.forgetPasswordChild}
         resizeMode="cover"
         source={require("../assets/group-3.png")}
       />
+      <View style={styles.frameParent}>
+        <View style={styles.groupParent}>
+          <Image
+            style={styles.frameChild}
+            resizeMode="cover"
+            source={require("../assets/group-28.png")}
+          />
+          <Text style={[styles.lashy, styles.passwordClr]}>LASHY</Text>
+        </View>
+        <View style={[styles.frameGroup, styles.frameBorder]}>
+          <View style={styles.frameFlexBox}>
+            <Text style={[styles.forgetPassword1, styles.frameFlexBox]}>
+              FORGET PASSWORD?
+            </Text>
+            <View style={[styles.frameContainer, styles.frameFlexBox]}>
+              <TextInput
+                style={[styles.frameItem, styles.frameItemTypo]}
+                placeholder="enter email"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                placeholderTextColor="#000"
+              />
+              <Text style={[styles.aPasswordReset, styles.frameItemTypo]}>
+                A password reset link will be sent to the associate email.
+              </Text>
+            </View>
+          </View>
+          <Pressable style={styles.continueWrapper} c2="Continue">
+            <Text style={styles.continue}>Continue</Text>
+          </Pressable>
+        </View>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  frameGroupFlexBox: {
-    justifyContent: "center",
+  passwordClr: {
+    display: "flex",
+    color: Color.colorBlack,
+    textAlign: "center",
+  },
+  frameBorder: {
+    paddingHorizontal: Padding.p_3xs,
+    borderWidth: 1,
+    borderColor: Color.colorBlack,
+    borderStyle: "solid",
+  },
+  frameFlexBox: {
     alignSelf: "stretch",
     alignItems: "center",
   },
-  wrapperFlexBox: {
-    flexDirection: "row",
+  frameItemTypo: {
+    fontSize: FontSize.size_xl,
+    alignSelf: "stretch",
     justifyContent: "center",
-    alignItems: "center",
-  },
-  enterEmailTypo: {
     fontFamily: FontFamily.interLight,
     fontWeight: "300",
+    alignItems: "center",
+  },
+  forgetPasswordChild: {
+    top: 27,
+    left: 23,
+    width: 20,
+    height: 20,
+    position: "absolute",
+  },
+  frameChild: {
+    width: 80,
+    height: 88,
+  },
+  lashy: {
+    fontSize: FontSize.size_6xl,
+    width: 84,
+    height: 38,
+    marginLeft: -20,
     justifyContent: "center",
-    display: "flex",
-    textAlign: "center",
+    fontFamily: FontFamily.interLight,
+    fontWeight: "300",
     color: Color.colorBlack,
+    alignItems: "center",
+  },
+  groupParent: {
+    flexDirection: "row",
     alignItems: "center",
   },
   forgetPassword1: {
@@ -62,38 +108,32 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontFamily: FontFamily.sourceSansPro,
     height: 54,
+    justifyContent: "center",
     display: "flex",
     color: Color.colorBlack,
-    justifyContent: "center",
     textAlign: "center",
   },
-  enterEmail: {
-    fontSize: FontSize.size_6xl,
-    width: 305,
-  },
-  enterEmailWrapper: {
+  frameItem: {
     borderRadius: Border.br_3xs,
     backgroundColor: Color.colorGainsboro,
-    borderStyle: "solid",
-    borderColor: Color.colorBlack,
-    borderWidth: 1,
     height: 46,
-    paddingHorizontal: 22,
     paddingVertical: Padding.p_6xs,
-    alignSelf: "stretch",
+    paddingHorizontal: Padding.p_3xs,
+    borderWidth: 1,
+    borderColor: Color.colorBlack,
+    borderStyle: "solid",
+    flexDirection: "row",
   },
   aPasswordReset: {
-    fontSize: FontSize.size_xl,
     height: 52,
     marginTop: 21,
-    alignSelf: "stretch",
+    display: "flex",
+    color: Color.colorBlack,
+    textAlign: "center",
   },
-  frameGroup: {
+  frameContainer: {
     marginTop: 40,
-  },
-  forgetPasswordParent: {
-    alignSelf: "stretch",
-    alignItems: "center",
+    justifyContent: "center",
   },
   continue: {
     fontSize: FontSize.size_base,
@@ -108,21 +148,24 @@ const styles = StyleSheet.create({
     height: 49,
     padding: Padding.p_2xs,
     marginTop: 33,
+    justifyContent: "center",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  frameGroup: {
+    borderRadius: Border.br_xl,
+    paddingVertical: Padding.p_xl,
+    marginTop: 55,
+    alignSelf: "stretch",
+    alignItems: "center",
   },
   frameParent: {
-    marginTop: -147,
-    marginLeft: -165,
+    marginTop: -239,
+    marginLeft: -166,
     top: "50%",
     left: "50%",
     width: 331,
     alignItems: "center",
-    position: "absolute",
-  },
-  forgetPasswordChild: {
-    top: 27,
-    left: 23,
-    width: 20,
-    height: 20,
     position: "absolute",
   },
   forgetPassword: {

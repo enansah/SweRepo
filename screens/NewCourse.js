@@ -1,7 +1,14 @@
 import * as React from "react";
-import { Image, StyleSheet, Text, View, Pressable } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  TextInput,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Color, Padding, Border, FontFamily, FontSize } from "../GlobalStyles";
+import { Color, FontSize, Padding, FontFamily, Border } from "../GlobalStyles";
 
 const NewCourse = () => {
   const navigation = useNavigation();
@@ -15,7 +22,7 @@ const NewCourse = () => {
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-22.png")}
+                source={require("../assets/group-211.png")}
               />
               <Text style={[styles.lashy, styles.lashyFlexBox]}>LASHY</Text>
             </View>
@@ -26,34 +33,35 @@ const NewCourse = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/settingsbtn2.png")}
+                source={require("../assets/settingsbtn21.png")}
               />
             </Pressable>
           </View>
           <View style={styles.frameGroup}>
             <View style={styles.createnewcourseParent}>
               <View style={styles.createnewcourse}>
-                <Text style={[styles.newCourse1, styles.courseClr]}>{`NEW
+                <Text style={[styles.newCourse1, styles.createClr]}>{`NEW
 COURSE`}</Text>
               </View>
               <View style={styles.coursenameParent}>
-                <View style={[styles.coursename, styles.describeBorder]}>
-                  <Text
-                    style={[styles.courseName, styles.courseClr]}
-                  >{`course name `}</Text>
-                </View>
-                <View style={[styles.describe, styles.describeBorder]}>
-                  <Text style={[styles.courseName, styles.courseClr]}>
-                    description(optional)
-                  </Text>
-                </View>
+                <TextInput
+                  style={[styles.coursename, styles.describeTypo]}
+                  placeholder="course name "
+                  placeholderTextColor="#1a1a1a"
+                />
+                <TextInput
+                  style={[styles.describe, styles.describeTypo]}
+                  placeholder="description(optional)"
+                  multiline={true}
+                  placeholderTextColor="#1a1a1a"
+                />
               </View>
             </View>
             <Pressable
-              style={styles.createbtn}
+              style={[styles.createbtn, styles.lashyFlexBox]}
               onPress={() => navigation.navigate("NewCard3")}
             >
-              <Text style={[styles.create, styles.courseClr]}>Create</Text>
+              <Text style={[styles.create, styles.createClr]}>Create</Text>
             </Pressable>
           </View>
         </View>
@@ -62,7 +70,7 @@ COURSE`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus3.png")}
+              source={require("../assets/plus2.png")}
             />
             <Text style={styles.create1}>Create</Text>
           </View>
@@ -73,7 +81,7 @@ COURSE`}</Text>
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home3.png")}
+              source={require("../assets/home2.png")}
             />
             <Text style={styles.homeTypo}>Home</Text>
           </Pressable>
@@ -103,19 +111,21 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  courseClr: {
+  createClr: {
     color: Color.bLACK,
     textAlign: "center",
   },
-  describeBorder: {
+  describeTypo: {
+    fontSize: FontSize.size_xl,
     paddingVertical: Padding.p_6xs,
-    height: 60,
+    paddingHorizontal: Padding.p_xl,
     backgroundColor: Color.colorGray_100,
-    borderRadius: Border.br_31xl,
     borderWidth: 1,
     borderColor: Color.colorBlack,
     borderStyle: "solid",
     justifyContent: "center",
+    fontFamily: FontFamily.interLight,
+    fontWeight: "300",
     flexDirection: "row",
     alignItems: "center",
   },
@@ -143,9 +153,9 @@ const styles = StyleSheet.create({
     height: 23,
     marginLeft: -15,
     textAlign: "center",
-    justifyContent: "center",
     fontFamily: FontFamily.interLight,
     fontWeight: "300",
+    justifyContent: "center",
   },
   groupParent: {
     flexDirection: "row",
@@ -168,7 +178,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   createnewcourse: {
-    borderRadius: Border.br_xl,
     backgroundColor: Color.colorSilver_100,
     height: 229,
     paddingHorizontal: Padding.p_4xl,
@@ -176,25 +185,24 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Color.colorBlack,
     borderStyle: "solid",
+    borderRadius: Border.br_xl,
     justifyContent: "center",
     flexDirection: "row",
     alignSelf: "stretch",
     alignItems: "center",
   },
-  courseName: {
-    fontSize: FontSize.size_xl,
-    fontFamily: FontFamily.interLight,
-    fontWeight: "300",
-    color: Color.bLACK,
-    flex: 1,
-  },
   coursename: {
     width: 326,
-    paddingHorizontal: Padding.p_8xl,
+    height: 60,
+    borderRadius: Border.br_31xl,
   },
   describe: {
-    paddingHorizontal: Padding.p_mini,
+    height: 78,
     marginTop: 10,
+    borderRadius: Border.br_xl,
+    paddingVertical: Padding.p_6xs,
+    paddingHorizontal: Padding.p_xl,
+    backgroundColor: Color.colorGray_100,
     alignSelf: "stretch",
   },
   coursenameParent: {
@@ -215,11 +223,9 @@ const styles = StyleSheet.create({
     width: 122,
     height: 49,
     padding: Padding.p_2xs,
-    marginTop: 98,
+    marginTop: 80,
     borderRadius: Border.br_31xl,
-    justifyContent: "center",
     flexDirection: "row",
-    alignItems: "center",
   },
   frameGroup: {
     marginTop: 40,

@@ -1,22 +1,37 @@
 import * as React from "react";
-import { Text, StyleSheet, Image, View, Pressable } from "react-native";
+import {
+  TextInput,
+  StyleSheet,
+  View,
+  Pressable,
+  Image,
+  Text,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { FontFamily, Border, Color, FontSize, Padding } from "../GlobalStyles";
+import { Color, FontFamily, Border, FontSize, Padding } from "../GlobalStyles";
 
 const SearchArea = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.searchcoursesParent}>
-      <View style={styles.searchcourses}>
-        <View style={styles.searchParent}>
-          <Text style={[styles.search, styles.searchTypo]}>search</Text>
-          <Image
-            style={styles.searchIcon}
-            resizeMode="cover"
-            source={require("../assets/search.png")}
+    <View style={styles.frameParent}>
+      <View style={styles.vectorWrapperFlexBox}>
+        <View style={[styles.searchcourses, styles.searchcoursesBorder]}>
+          <TextInput
+            style={[styles.search, styles.searchTypo]}
+            placeholder="search"
+            placeholderTextColor="#1a1a1a"
           />
         </View>
+        <Pressable style={[styles.search1, styles.search1Layout]}>
+          <View style={[styles.vectorWrapper, styles.searchcoursesBorder]}>
+            <Image
+              style={styles.search1Layout}
+              resizeMode="cover"
+              source={require("../assets/vector.png")}
+            />
+          </View>
+        </Pressable>
       </View>
       <View style={styles.recentlyViewedParent}>
         <Text style={[styles.recentlyViewed, styles.coursesFlexBox]}>
@@ -48,10 +63,18 @@ const SearchArea = () => {
 };
 
 const styles = StyleSheet.create({
+  searchcoursesBorder: {
+    borderWidth: 1,
+    borderColor: Color.colorBlack,
+    borderStyle: "solid",
+  },
   searchTypo: {
-    display: "flex",
     fontFamily: FontFamily.interLight,
     fontWeight: "300",
+  },
+  search1Layout: {
+    height: 25,
+    width: 25,
   },
   coursesFlexBox: {
     justifyContent: "center",
@@ -61,47 +84,50 @@ const styles = StyleSheet.create({
     marginTop: 15,
     borderRadius: Border.br_mini,
     justifyContent: "center",
-    flexDirection: "row",
     backgroundColor: Color.white,
+    flexDirection: "row",
     alignItems: "center",
     alignSelf: "stretch",
   },
   search: {
     fontSize: FontSize.size_xl,
-    textAlign: "left",
-    width: 260,
-    height: 25,
-    color: Color.bLACK,
-    alignItems: "center",
-  },
-  searchIcon: {
-    width: 25,
-    marginLeft: 10,
-    height: 25,
-  },
-  searchParent: {
-    width: 296,
-    flexDirection: "row",
-    alignItems: "center",
+    alignSelf: "stretch",
   },
   searchcourses: {
     borderRadius: Border.br_31xl,
-    borderStyle: "solid",
-    borderColor: Color.colorBlack,
-    borderWidth: 1,
-    width: 326,
-    height: 46,
+    width: 277,
+    height: 50,
     paddingHorizontal: Padding.p_mini,
     paddingVertical: Padding.p_3xs,
     backgroundColor: Color.white,
+    borderWidth: 1,
+    borderColor: Color.colorBlack,
+    borderStyle: "solid",
+  },
+  vectorWrapper: {
+    position: "absolute",
+    top: -10,
+    left: -10,
+    borderRadius: Border.br_81xl,
+    padding: Padding.p_3xs,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  search1: {
+    backgroundColor: Color.colorGray_200,
+    marginLeft: 10,
+  },
+  vectorWrapperFlexBox: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   recentlyViewed: {
     fontSize: FontSize.size_6xl,
     color: Color.gREEN,
+    display: "flex",
     width: 319,
     height: 32,
     textAlign: "center",
-    display: "flex",
     fontFamily: FontFamily.interLight,
     fontWeight: "300",
   },
@@ -109,8 +135,8 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_5xl,
     fontWeight: "800",
     fontFamily: FontFamily.interExtraBold,
-    textAlign: "center",
     color: Color.bLACK,
+    textAlign: "center",
   },
   course1: {
     paddingHorizontal: Padding.p_11xs,
@@ -118,8 +144,8 @@ const styles = StyleSheet.create({
     height: 43,
     borderRadius: Border.br_mini,
     justifyContent: "center",
-    flexDirection: "row",
     backgroundColor: Color.white,
+    flexDirection: "row",
     alignItems: "center",
     alignSelf: "stretch",
   },
@@ -148,7 +174,7 @@ const styles = StyleSheet.create({
     marginTop: 23,
     alignSelf: "stretch",
   },
-  searchcoursesParent: {
+  frameParent: {
     marginTop: 40,
     alignItems: "center",
     alignSelf: "stretch",

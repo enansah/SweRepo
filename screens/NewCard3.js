@@ -15,7 +15,7 @@ const NewCard3 = () => {
               <Image
                 style={styles.frameChild}
                 resizeMode="cover"
-                source={require("../assets/group-23.png")}
+                source={require("../assets/group-29.png")}
               />
               <Text style={[styles.lashy, styles.lashyTypo]}>LASHY</Text>
             </View>
@@ -26,7 +26,7 @@ const NewCard3 = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 resizeMode="cover"
-                source={require("../assets/settingsbtn2.png")}
+                source={require("../assets/settingsbtn21.png")}
               />
             </Pressable>
           </View>
@@ -63,7 +63,7 @@ const NewCard3 = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus3.png")}
+              source={require("../assets/plus2.png")}
             />
             <Text style={styles.create}>Create</Text>
           </View>
@@ -74,7 +74,7 @@ const NewCard3 = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home3.png")}
+              source={require("../assets/home2.png")}
             />
             <Text style={styles.homeTypo}>Home</Text>
           </Pressable>

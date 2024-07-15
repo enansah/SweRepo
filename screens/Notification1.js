@@ -65,7 +65,7 @@ const Notification1 = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/plus5.png")}
+              source={require("../assets/plus6.png")}
             />
             <Text style={styles.createTypo}>Create</Text>
           </Pressable>
@@ -76,7 +76,7 @@ const Notification1 = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/home4.png")}
+              source={require("../assets/home6.png")}
             />
             <Text style={styles.createTypo}>Home</Text>
           </Pressable>
@@ -87,7 +87,7 @@ const Notification1 = () => {
             <Image
               style={styles.plusIcon}
               resizeMode="cover"
-              source={require("../assets/bookreader4.png")}
+              source={require("../assets/bookreader6.png")}
             />
             <Text style={[styles.library, styles.createTypo]}>Library</Text>
           </Pressable>
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     height: 35,
   },
   whmcs: {
-    backgroundColor: "rgba(0, 0, 0, 0)",
+    backgroundColor: Color.colorGray_200,
     paddingHorizontal: 3,
     paddingVertical: Padding.p_11xs,
     flexDirection: "row",
